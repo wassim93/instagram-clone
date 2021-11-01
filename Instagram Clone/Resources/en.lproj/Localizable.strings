@@ -12,5 +12,7 @@
 "pass_input_placeholder" = "Password";
 "login_btn_text" = "Login";
 "new_account_text" = "Don't have an account? Sign up";
+"new_account_title" = "Sign up";
+
 "restart_msg" = "Restart Required";
 "change_language_success" = "Language have been changed successfully ,Please restart the app to take effects";

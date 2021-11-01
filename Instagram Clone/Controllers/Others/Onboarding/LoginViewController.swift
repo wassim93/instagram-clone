@@ -29,7 +29,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         dropdownConfig()
         uiConfig()
+
     }
+
 
     fileprivate func uiConfig() {
         emailTxt.placeholder = AppHelper.getLocalizeString(str: "email_input_placeholder")
@@ -44,6 +46,24 @@ class LoginViewController: UIViewController {
         }
         loginBtn.clipsToBounds = true
         loginBtn.layer.cornerRadius = 5
+
+        let text = newAccountLbl.text
+        let underlineAttriString = NSMutableAttributedString(string: text!)
+        let range1 = (text! as NSString).range(of: AppHelper.getLocalizeString(str: "new_account_title"))
+        let font = UIFont.boldSystemFont(ofSize: 14)
+
+        underlineAttriString.addAttribute(NSAttributedString.Key.font, value:font, range: range1)
+        underlineAttriString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.link, range: range1)
+        newAccountLbl.attributedText = underlineAttriString
+        newAccountLbl.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showRegisterView))
+        newAccountLbl.addGestureRecognizer(gesture)
+
+    }
+
+    @objc func showRegisterView(sender : UITapGestureRecognizer) {
+        // Do what you want
+        print("register")
     }
 
 
