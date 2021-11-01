@@ -33,6 +33,9 @@ class LoginViewController: UIViewController {
     }
 
 
+
+    // MARK:- UI-Configs
+
     fileprivate func uiConfig() {
         emailTxt.placeholder = AppHelper.getLocalizeString(str: "email_input_placeholder")
         passwordTxt.placeholder = AppHelper.getLocalizeString(str: "pass_input_placeholder")
@@ -47,6 +50,12 @@ class LoginViewController: UIViewController {
         loginBtn.clipsToBounds = true
         loginBtn.layer.cornerRadius = 5
 
+        setupAttributedStringForRegister()
+
+    }
+
+
+    fileprivate func setupAttributedStringForRegister() {
         let text = newAccountLbl.text
         let underlineAttriString = NSMutableAttributedString(string: text!)
         let range1 = (text! as NSString).range(of: AppHelper.getLocalizeString(str: "new_account_title"))
@@ -58,14 +67,7 @@ class LoginViewController: UIViewController {
         newAccountLbl.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showRegisterView))
         newAccountLbl.addGestureRecognizer(gesture)
-
     }
-
-    @objc func showRegisterView(sender : UITapGestureRecognizer) {
-        // Do what you want
-        print("register")
-    }
-
 
 
     fileprivate func dropdownConfig() {
@@ -96,6 +98,7 @@ class LoginViewController: UIViewController {
         languagesDropDown.addGestureRecognizer(gesture)
     }
 
+
     fileprivate func showAlert() {
         let alert = UIAlertController(title: AppHelper.getLocalizeString(str: "restart_msg"), message: AppHelper.getLocalizeString(str: "change_language_success"), preferredStyle: .alert)
 
@@ -104,13 +107,34 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true)
     }
 
+
+    // MARK:- Actions
+
+    @objc func showRegisterView(sender : UITapGestureRecognizer) {
+        print("register")
+    }
+
+
+
     @objc func showList(sender : UITapGestureRecognizer) {
-        // Do what you want
         dropDown.show()
     }
 
 
     @IBAction func loginClick(_ sender: Any) {
+        emailTxt.resignFirstResponder()
+        passwordTxt.resignFirstResponder()
+        guard let userEmail = emailTxt.text else {
+            return
+        }
+        guard let userPass = passwordTxt.text, userPass.count >= 8 else {
+            print("error pass have less than 8 caracters")
+            return
+        }
+
+        // login core
+
+
     }
 
 }
