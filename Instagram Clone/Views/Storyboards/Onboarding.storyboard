@@ -122,6 +122,7 @@
                         <outlet property="emailTxt" destination="pHG-zd-amB" id="uMu-UU-RAW"/>
                         <outlet property="languagesDropDown" destination="RrK-Rn-HRU" id="odr-qG-MB1"/>
                         <outlet property="loginBtn" destination="TJS-j0-5wg" id="xAb-mX-5VD"/>
+                        <outlet property="newAccountLbl" destination="2ih-6z-mDa" id="eOb-eY-af2"/>
                         <outlet property="passwordTxt" destination="cdp-2t-SBD" id="P0L-AO-g7N"/>
                         <outlet property="selectedLanguageLbl" destination="RCr-bE-C42" id="hdB-NS-VIr"/>
                     </connections>

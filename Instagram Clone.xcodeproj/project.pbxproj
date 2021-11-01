@@ -37,6 +37,8 @@
 		CF54E326272F1460003D9C31 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E325272F1460003D9C31 /* StorageManager.swift */; };
 		CF54E328272F20FD003D9C31 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54E327272F20FD003D9C31 /* Onboarding.storyboard */; };
 		CFA08A6F2BE5FDE8E66B7ADC /* Pods_Instagram_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C5549972FEAA8A264CBB4A /* Pods_Instagram_Clone.framework */; };
+		CFE73A1B27303A6500C62961 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFE73A1D27303A6500C62961 /* Localizable.strings */; };
+		CFE73A222730456800C62961 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A212730456800C62961 /* AppHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,10 @@
 		CF54E323272F141A003D9C31 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		CF54E325272F1460003D9C31 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CF54E327272F20FD003D9C31 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		CFE73A1827303A4700C62961 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		CFE73A1C27303A6500C62961 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CFE73A1F27303A8800C62961 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CFE73A212730456800C62961 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		E3C888FEA1CF684997C99293 /* Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDFCA0A61F187FCE7594326F /* Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,12 +225,11 @@
 		CF1B8902272DFF55001DF2AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CFE73A202730452900C62961 /* Utils */,
 				CF54E31E272F08CE003D9C31 /* GoogleService-Info.plist */,
 				CF1B88CF272DFE64001DF2AD /* AppDelegate.swift */,
 				CF1B88D1272DFE64001DF2AD /* SceneDelegate.swift */,
-				CF54E321272F1090003D9C31 /* DatabaseManager.swift */,
-				CF54E323272F141A003D9C31 /* AuthManager.swift */,
-				CF54E325272F1460003D9C31 /* StorageManager.swift */,
+				CFE73A1D27303A6500C62961 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -282,6 +287,17 @@
 				CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		CFE73A202730452900C62961 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CF54E321272F1090003D9C31 /* DatabaseManager.swift */,
+				CF54E323272F141A003D9C31 /* AuthManager.swift */,
+				CF54E325272F1460003D9C31 /* StorageManager.swift */,
+				CFE73A212730456800C62961 /* AppHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		EE955C2B3F23480652F7846A /* Pods */ = {
@@ -387,6 +403,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = CF1B88C3272DFE64001DF2AD;
 			productRefGroup = CF1B88CD272DFE64001DF2AD /* Products */;
@@ -406,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1B88DC272DFE66001DF2AD /* LaunchScreen.storyboard in Resources */,
+				CFE73A1B27303A6500C62961 /* Localizable.strings in Resources */,
 				CF54E328272F20FD003D9C31 /* Onboarding.storyboard in Resources */,
 				CF54E31F272F08CE003D9C31 /* GoogleService-Info.plist in Resources */,
 				CF1B88D9272DFE66001DF2AD /* Assets.xcassets in Resources */,
@@ -541,6 +559,7 @@
 				CF1B8905272E0055001DF2AD /* ExploreViewController.swift in Sources */,
 				CF1B8922272E01CF001DF2AD /* PublishPostViewController.swift in Sources */,
 				CF1B8907272E006C001DF2AD /* CameraViewController.swift in Sources */,
+				CFE73A222730456800C62961 /* AppHelper.swift in Sources */,
 				CF1B8909272E0082001DF2AD /* NotificationViewController.swift in Sources */,
 				CF1B8912272E0119001DF2AD /* RegistrationViewController.swift in Sources */,
 				CF1B8920272E01B4001DF2AD /* PostEditorViewController.swift in Sources */,
@@ -596,6 +615,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CF1B88D6272DFE64001DF2AD /* Base */,
+				CFE73A1827303A4700C62961 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -608,6 +628,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		CFE73A1D27303A6500C62961 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFE73A1C27303A6500C62961 /* fr */,
+				CFE73A1F27303A8800C62961 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -615,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -676,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

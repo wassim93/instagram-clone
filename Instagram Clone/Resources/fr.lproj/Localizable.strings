@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Instagram Clone
+
+  Created by wassim on 1/11/2021.
+  
+*/
+// Mark: - LoginScreen
+"fr_language" = "Francais,France";
+"en_language" = "Anglais,Etat Unis";
+"email_input_placeholder" = "Adresse Email ou Nom d'utilisateur";
+"pass_input_placeholder" = "Mot de passe";
+"login_btn_text" = "Se Connecter";
+"new_account_text" = "Nouveau Utilisateur?,Creer votre compte";
+
+

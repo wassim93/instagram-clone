@@ -24,7 +24,9 @@ class HomeViewController: UIViewController {
 
             let loginVc = storyboard.instantiateViewController(identifier: "LoginViewController")
             loginVc.modalPresentationStyle = .fullScreen
-            present(loginVc, animated: false)
+            DispatchQueue.main.async {
+                self.present(loginVc, animated: false)
+            }
         }
     }
 
