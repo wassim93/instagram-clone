@@ -12,5 +12,7 @@
 "pass_input_placeholder" = "Mot de passe";
 "login_btn_text" = "Se Connecter";
 "new_account_text" = "Nouveau Utilisateur?,Creer votre compte";
+"restart_msg" = "Redemarrage Requis";
+"change_language_success" = "La Langue a ete change avec succès,Veuillez redémarrer l'application pour prendre effet";
 
 

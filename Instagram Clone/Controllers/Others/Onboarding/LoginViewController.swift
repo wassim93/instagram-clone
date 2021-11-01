@@ -25,10 +25,13 @@ class LoginViewController: UIViewController {
     }
 
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         dropdownConfig()
+        uiConfig()
+    }
+
+    fileprivate func uiConfig() {
         emailTxt.placeholder = AppHelper.getLocalizeString(str: "email_input_placeholder")
         passwordTxt.placeholder = AppHelper.getLocalizeString(str: "pass_input_placeholder")
         loginBtn.setTitle(AppHelper.getLocalizeString(str: "login_btn_text"), for: .normal)
@@ -41,11 +44,9 @@ class LoginViewController: UIViewController {
         }
         loginBtn.clipsToBounds = true
         loginBtn.layer.cornerRadius = 5
-
-
-
-        // Do any additional setup after loading the view.
     }
+
+
 
     fileprivate func dropdownConfig() {
         dropDown.anchorView = languagesDropDown
@@ -60,25 +61,27 @@ class LoginViewController: UIViewController {
         DropDown.appearance().cellHeight = 40
 
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-
-
+           // print("Selected item: \(item) at index: \(index)")
+            showAlert()
             if index == 0 {
                 UserDefaults.standard.set("en", forKey: "Language")
                 selectedLanguageLbl.text = AppHelper.getLocalizeString(str: "en_language")
-
-
             }else{
                 UserDefaults.standard.set("fr", forKey: "Language")
                 selectedLanguageLbl.text = AppHelper.getLocalizeString(str: "fr_language")
-
             }
-
-
         }
 
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.showList))
         languagesDropDown.addGestureRecognizer(gesture)
+    }
+
+    fileprivate func showAlert() {
+        let alert = UIAlertController(title: AppHelper.getLocalizeString(str: "restart_msg"), message: AppHelper.getLocalizeString(str: "change_language_success"), preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
     }
 
     @objc func showList(sender : UITapGestureRecognizer) {
