@@ -32,6 +32,10 @@
 		CF1B8920272E01B4001DF2AD /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B891F272E01B4001DF2AD /* PostEditorViewController.swift */; };
 		CF1B8922272E01CF001DF2AD /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */; };
 		CF54E31F272F08CE003D9C31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF54E31E272F08CE003D9C31 /* GoogleService-Info.plist */; };
+		CF54E322272F1090003D9C31 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E321272F1090003D9C31 /* DatabaseManager.swift */; };
+		CF54E324272F141A003D9C31 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E323272F141A003D9C31 /* AuthManager.swift */; };
+		CF54E326272F1460003D9C31 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E325272F1460003D9C31 /* StorageManager.swift */; };
+		CF54E328272F20FD003D9C31 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54E327272F20FD003D9C31 /* Onboarding.storyboard */; };
 		CFA08A6F2BE5FDE8E66B7ADC /* Pods_Instagram_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C5549972FEAA8A264CBB4A /* Pods_Instagram_Clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,10 @@
 		CF1B891F272E01B4001DF2AD /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
 		CF54E31E272F08CE003D9C31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF54E321272F1090003D9C31 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		CF54E323272F141A003D9C31 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		CF54E325272F1460003D9C31 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		CF54E327272F20FD003D9C31 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		E3C888FEA1CF684997C99293 /* Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDFCA0A61F187FCE7594326F /* Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +222,9 @@
 				CF54E31E272F08CE003D9C31 /* GoogleService-Info.plist */,
 				CF1B88CF272DFE64001DF2AD /* AppDelegate.swift */,
 				CF1B88D1272DFE64001DF2AD /* SceneDelegate.swift */,
+				CF54E321272F1090003D9C31 /* DatabaseManager.swift */,
+				CF54E323272F141A003D9C31 /* AuthManager.swift */,
+				CF54E325272F1460003D9C31 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -223,6 +234,7 @@
 			children = (
 				CF1B88D5272DFE64001DF2AD /* Main.storyboard */,
 				CF1B88DA272DFE66001DF2AD /* LaunchScreen.storyboard */,
+				CF54E327272F20FD003D9C31 /* Onboarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -243,14 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				CF1B890E272E00E5001DF2AD /* Onboarding */,
-				CF1B8913272E013A001DF2AD /* PostViewController.swift */,
-				CF1B8915272E0150001DF2AD /* EditProfileViewController.swift */,
-				CF1B8917272E015C001DF2AD /* SettingsViewController.swift */,
-				CF1B8919272E0175001DF2AD /* ListViewController.swift */,
-				CF1B891B272E0180001DF2AD /* SearchViewController.swift */,
-				CF1B891D272E0196001DF2AD /* SearchResultViewController.swift */,
-				CF1B891F272E01B4001DF2AD /* PostEditorViewController.swift */,
-				CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */,
+				CF54E320272F1014003D9C31 /* General */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -262,6 +267,21 @@
 				CF1B8911272E0119001DF2AD /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CF54E320272F1014003D9C31 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				CF1B8913272E013A001DF2AD /* PostViewController.swift */,
+				CF1B8915272E0150001DF2AD /* EditProfileViewController.swift */,
+				CF1B8917272E015C001DF2AD /* SettingsViewController.swift */,
+				CF1B8919272E0175001DF2AD /* ListViewController.swift */,
+				CF1B891B272E0180001DF2AD /* SearchViewController.swift */,
+				CF1B891D272E0196001DF2AD /* SearchResultViewController.swift */,
+				CF1B891F272E01B4001DF2AD /* PostEditorViewController.swift */,
+				CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		EE955C2B3F23480652F7846A /* Pods */ = {
@@ -386,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1B88DC272DFE66001DF2AD /* LaunchScreen.storyboard in Resources */,
+				CF54E328272F20FD003D9C31 /* Onboarding.storyboard in Resources */,
 				CF54E31F272F08CE003D9C31 /* GoogleService-Info.plist in Resources */,
 				CF1B88D9272DFE66001DF2AD /* Assets.xcassets in Resources */,
 				CF1B88D7272DFE64001DF2AD /* Main.storyboard in Resources */,
@@ -523,12 +544,15 @@
 				CF1B8909272E0082001DF2AD /* NotificationViewController.swift in Sources */,
 				CF1B8912272E0119001DF2AD /* RegistrationViewController.swift in Sources */,
 				CF1B8920272E01B4001DF2AD /* PostEditorViewController.swift in Sources */,
+				CF54E326272F1460003D9C31 /* StorageManager.swift in Sources */,
 				CF1B8914272E013A001DF2AD /* PostViewController.swift in Sources */,
+				CF54E322272F1090003D9C31 /* DatabaseManager.swift in Sources */,
 				CF1B88D4272DFE64001DF2AD /* HomeViewController.swift in Sources */,
 				CF1B891E272E0196001DF2AD /* SearchResultViewController.swift in Sources */,
 				CF1B8910272E010C001DF2AD /* LoginViewController.swift in Sources */,
 				CF1B891C272E0180001DF2AD /* SearchViewController.swift in Sources */,
 				CF1B890B272E008C001DF2AD /* ProfileViewController.swift in Sources */,
+				CF54E324272F141A003D9C31 /* AuthManager.swift in Sources */,
 				CF1B88D0272DFE64001DF2AD /* AppDelegate.swift in Sources */,
 				CF1B88D2272DFE64001DF2AD /* SceneDelegate.swift in Sources */,
 				CF1B891A272E0175001DF2AD /* ListViewController.swift in Sources */,

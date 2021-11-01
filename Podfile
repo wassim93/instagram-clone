@@ -13,6 +13,11 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Analytics'
 pod 'Firebase/Crashlytics'
+pod 'Firebase/Storage'
+
+#Dropdown
+pod 'DropDown'
+
 
 
 
