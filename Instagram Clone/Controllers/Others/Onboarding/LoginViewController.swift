@@ -84,7 +84,7 @@ class LoginViewController: UIViewController {
 
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
            // print("Selected item: \(item) at index: \(index)")
-            showAlert()
+            showAlert(alertTitle: AppHelper.getLocalizeString(str: "restart_msg"), alertMsg: AppHelper.getLocalizeString(str: "change_language_success"), buttonTxt: "OK")
             if index == 0 {
                 UserDefaults.standard.set("en", forKey: "Language")
                 selectedLanguageLbl.text = AppHelper.getLocalizeString(str: "en_language")
@@ -99,10 +99,10 @@ class LoginViewController: UIViewController {
     }
 
 
-    fileprivate func showAlert() {
-        let alert = UIAlertController(title: AppHelper.getLocalizeString(str: "restart_msg"), message: AppHelper.getLocalizeString(str: "change_language_success"), preferredStyle: .alert)
+    fileprivate func showAlert(alertTitle:String,alertMsg:String,buttonTxt:String) {
+        let alert = UIAlertController(title: alertTitle, message: alertMsg, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: buttonTxt, style: .default, handler: nil))
 
         self.present(alert, animated: true)
     }
@@ -133,6 +133,26 @@ class LoginViewController: UIViewController {
         }
 
         // login core
+        var username :String?
+        var email:String?
+        if userEmail.contains("@"),userEmail.contains(".") {
+            // this is email
+            email =  userEmail
+        }else{
+            // this is username
+            username = userEmail
+        }
+        AuthManager.shared.loginUser(username: username, email: email, password: userPass) { success in
+            DispatchQueue.main.async {
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                }else{
+                    // error occured
+                    self.showAlert(alertTitle: AppHelper.getLocalizeString(str: "login_error_title"), alertMsg: AppHelper.getLocalizeString(str: "login_error_msg"), buttonTxt: "OK")
+                }
+            }
+
+        }
 
 
     }

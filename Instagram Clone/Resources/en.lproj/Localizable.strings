@@ -16,3 +16,6 @@
 
 "restart_msg" = "Restart Required";
 "change_language_success" = "Language have been changed successfully ,Please restart the app to take effects";
+"login_error_title"= "Login Error";
+"login_error_msg"= "We were unable to connect";
+

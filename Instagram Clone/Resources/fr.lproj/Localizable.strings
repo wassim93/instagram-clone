@@ -15,5 +15,6 @@
 "new_account_title" = "Creer votre compte";
 "restart_msg" = "Redemarrage Requis";
 "change_language_success" = "La Langue a ete change avec succès,Veuillez redémarrer l'application pour prendre effet";
-
+"login_error_title"= "Erreur d'identification";
+"login_error_msg"= "Nous n'avons pas pu nous connecter";
 
