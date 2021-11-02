@@ -18,3 +18,11 @@
 "login_error_title"= "Erreur d'identification";
 "login_error_msg"= "Nous n'avons pas pu nous connecter";
 
+
+// Mark: - RegisterScreen
+"create_account_title"= "Creer un compte";
+"username_placeholder" = "Nom d'utilisateur";
+"email_placeholder" = "Adresse Email";
+"register_btn_title"= "S'inscrire";
+
+

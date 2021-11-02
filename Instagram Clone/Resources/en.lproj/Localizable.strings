@@ -19,3 +19,10 @@
 "login_error_title"= "Login Error";
 "login_error_msg"= "We were unable to connect";
 
+
+// Mark: - RegisterScreen
+"create_account_title"= "Create new account";
+
+"username_placeholder" = "Username";
+"email_placeholder" = "Email";
+"register_btn_title"= "Sign up";

@@ -111,7 +111,12 @@ class LoginViewController: UIViewController {
     // MARK:- Actions
 
     @objc func showRegisterView(sender : UITapGestureRecognizer) {
-        print("register")
+        let storyboard = UIStoryboard.init(name: "Onboarding", bundle: nil)
+        let registerVc = storyboard.instantiateViewController(identifier: "RegistrationViewController")
+        registerVc.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(registerVc, animated: true)
+        }
     }
 
 
