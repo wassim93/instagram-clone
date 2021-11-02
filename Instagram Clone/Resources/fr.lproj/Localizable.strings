@@ -25,4 +25,21 @@
 "email_placeholder" = "Adresse Email";
 "register_btn_title"= "S'inscrire";
 
+// Mark: - ProfileScreen
+"setting_vc_title" = "Options";
+
+
+// Mark: - SettingsScreen
+
+"logout_title" = "Se déconnecter";
+"section_setting_title" = "Paramètres";
+"section_help_title" = "Support";
+"logout_alert_msg" = "Êtes-vous sûr de vouloir vous déconnecter?";
+"no_msg" = "Annuler";
+
+
+
+
+
+
 

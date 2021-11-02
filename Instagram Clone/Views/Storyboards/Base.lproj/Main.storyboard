@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M8c-ps-TlF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -84,7 +85,7 @@
         <scene sceneID="k6C-XO-SO3">
             <objects>
                 <navigationController id="dAo-Dm-M6B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="globe" catalog="system" id="L4Z-ze-LNw"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="L4Z-ze-LNw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Az4-cJ-94I">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -101,7 +102,7 @@
         <scene sceneID="C2a-sw-Cnk">
             <objects>
                 <navigationController id="7aY-nX-wqe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="Hou-Lg-OHd"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="Hou-Lg-OHd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="thh-c3-uFs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -118,7 +119,7 @@
         <scene sceneID="NtZ-N9-G2a">
             <objects>
                 <navigationController id="QSl-XK-iAQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="camera" catalog="system" id="toi-2e-aQ0"/>
+                    <tabBarItem key="tabBarItem" title="" image="plus" catalog="system" id="toi-2e-aQ0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kI-BY-XgZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,6 +155,16 @@
                     <view key="view" contentMode="scaleToFill" id="Od7-a3-iW8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8X-an-51F">
+                                <rect key="frame" x="149" y="433" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="goToSettings:" destination="VkS-OQ-YZh" eventType="touchUpInside" id="HMH-fe-tQN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="QWg-sM-y8F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -197,11 +208,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
-        <image name="camera" catalog="system" width="128" height="94"/>
-        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

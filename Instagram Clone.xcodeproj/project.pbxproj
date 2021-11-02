@@ -37,6 +37,11 @@
 		CF54E326272F1460003D9C31 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E325272F1460003D9C31 /* StorageManager.swift */; };
 		CF54E328272F20FD003D9C31 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF54E327272F20FD003D9C31 /* Onboarding.storyboard */; };
 		CFA08A6F2BE5FDE8E66B7ADC /* Pods_Instagram_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C5549972FEAA8A264CBB4A /* Pods_Instagram_Clone.framework */; };
+		CFDEFAA42731DBBD00935AED /* General.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDEFAA32731DBBD00935AED /* General.storyboard */; };
+		CFDEFAA72731DF5500935AED /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFAA52731DF5500935AED /* SettingCell.swift */; };
+		CFDEFAA82731DF5500935AED /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDEFAA62731DF5500935AED /* SettingCell.xib */; };
+		CFDEFAAB2731E6A600935AED /* SettingHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDEFAA92731E6A600935AED /* SettingHeaderCell.swift */; };
+		CFDEFAAC2731E6A600935AED /* SettingHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDEFAAA2731E6A600935AED /* SettingHeaderCell.xib */; };
 		CFE73A1B27303A6500C62961 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFE73A1D27303A6500C62961 /* Localizable.strings */; };
 		CFE73A222730456800C62961 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A212730456800C62961 /* AppHelper.swift */; };
 		CFE73A262730E25400C62961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A252730E25400C62961 /* Extensions.swift */; };
@@ -100,6 +105,11 @@
 		CF54E323272F141A003D9C31 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		CF54E325272F1460003D9C31 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CF54E327272F20FD003D9C31 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		CFDEFAA32731DBBD00935AED /* General.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = General.storyboard; sourceTree = "<group>"; };
+		CFDEFAA52731DF5500935AED /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		CFDEFAA62731DF5500935AED /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		CFDEFAA92731E6A600935AED /* SettingHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderCell.swift; sourceTree = "<group>"; };
+		CFDEFAAA2731E6A600935AED /* SettingHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingHeaderCell.xib; sourceTree = "<group>"; };
 		CFE73A1827303A4700C62961 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		CFE73A1C27303A6500C62961 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFE73A1F27303A8800C62961 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -211,6 +221,7 @@
 		CF1B8900272DFF38001DF2AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFDEFAAD2731E99900935AED /* SettingsCustomViews */,
 				CF1B88D8272DFE66001DF2AD /* Assets.xcassets */,
 				CF1B8903272DFF81001DF2AD /* Storyboards */,
 			);
@@ -242,6 +253,7 @@
 				CF1B88D5272DFE64001DF2AD /* Main.storyboard */,
 				CF1B88DA272DFE66001DF2AD /* LaunchScreen.storyboard */,
 				CF54E327272F20FD003D9C31 /* Onboarding.storyboard */,
+				CFDEFAA32731DBBD00935AED /* General.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -289,6 +301,17 @@
 				CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		CFDEFAAD2731E99900935AED /* SettingsCustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				CFDEFAA92731E6A600935AED /* SettingHeaderCell.swift */,
+				CFDEFAAA2731E6A600935AED /* SettingHeaderCell.xib */,
+				CFDEFAA52731DF5500935AED /* SettingCell.swift */,
+				CFDEFAA62731DF5500935AED /* SettingCell.xib */,
+			);
+			path = SettingsCustomViews;
 			sourceTree = "<group>";
 		};
 		CFE73A202730452900C62961 /* Utils */ = {
@@ -431,6 +454,9 @@
 				CF54E31F272F08CE003D9C31 /* GoogleService-Info.plist in Resources */,
 				CF1B88D9272DFE66001DF2AD /* Assets.xcassets in Resources */,
 				CF1B88D7272DFE64001DF2AD /* Main.storyboard in Resources */,
+				CFDEFAAC2731E6A600935AED /* SettingHeaderCell.xib in Resources */,
+				CFDEFAA82731DF5500935AED /* SettingCell.xib in Resources */,
+				CFDEFAA42731DBBD00935AED /* General.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,9 +597,11 @@
 				CF1B8914272E013A001DF2AD /* PostViewController.swift in Sources */,
 				CF54E322272F1090003D9C31 /* DatabaseManager.swift in Sources */,
 				CF1B88D4272DFE64001DF2AD /* HomeViewController.swift in Sources */,
+				CFDEFAA72731DF5500935AED /* SettingCell.swift in Sources */,
 				CF1B891E272E0196001DF2AD /* SearchResultViewController.swift in Sources */,
 				CF1B8910272E010C001DF2AD /* LoginViewController.swift in Sources */,
 				CF1B891C272E0180001DF2AD /* SearchViewController.swift in Sources */,
+				CFDEFAAB2731E6A600935AED /* SettingHeaderCell.swift in Sources */,
 				CF1B890B272E008C001DF2AD /* ProfileViewController.swift in Sources */,
 				CF54E324272F141A003D9C31 /* AuthManager.swift in Sources */,
 				CF1B88D0272DFE64001DF2AD /* AppDelegate.swift in Sources */,
