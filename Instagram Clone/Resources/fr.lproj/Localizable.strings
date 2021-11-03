@@ -37,6 +37,10 @@
 "logout_alert_msg" = "Êtes-vous sûr de vouloir vous déconnecter?";
 "no_msg" = "Annuler";
 
+// Mark: - NotificationScreen
+
+"notification_ui_title" = "Notifications";
+
 
 
 

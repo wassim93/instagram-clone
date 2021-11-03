@@ -11,6 +11,7 @@ class NotificationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = AppHelper.getLocalizeString(str: "notification_ui_title")
 
         // Do any additional setup after loading the view.
     }

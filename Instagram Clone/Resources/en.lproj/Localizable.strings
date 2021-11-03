@@ -39,4 +39,9 @@
 "logout_alert_msg" = "Are you sure you want to log out ?";
 "no_msg" = "Cancel";
 
+// Mark: - NotificationScreen
+
+"notification_ui_title" = "Notifications";
+
+
 
