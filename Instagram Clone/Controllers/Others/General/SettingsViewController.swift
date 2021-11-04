@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import SafariServices
 
 struct SettingCellModel {
     let title:String
     let handler: (()->Void)
 
+}
+enum SettingUrlType{
+    case privacy,terms,help
 }
 
 /// view controller to show user settings
@@ -99,9 +103,16 @@ class SettingsViewController: UIViewController {
         
     }
     private func didTapEditProfile(){
-        print("profile clicked")
+        //print("profile clicked")
+        let editVc =  AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "EditProfileViewController")
+        editVc.title = AppHelper.getLocalizeString(str: "edit_profile_title")
+        let navController = UINavigationController(rootViewController: editVc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+
     }
     private func didTapInviteFriends(){
+        /// show sheet to invite friends
         print("invite  clicked")
     }
     private func didTapSavePosts(){
@@ -109,14 +120,38 @@ class SettingsViewController: UIViewController {
     }
 
     private func didTapPrivacyPolicy(){
-        print("privacy  clicked")
+        //print("privacy  clicked")
+        openUrl(type: .privacy)
     }
     private func didTapTermsServices(){
-        print("terms  clicked")
+        //print("terms  clicked")
+        openUrl(type: .terms)
+
     }
 
     private func didTapHelp(){
-        print("help  clicked")
+        //print("help  clicked")
+        openUrl(type: .help)
+
+    }
+
+
+
+    private func openUrl(type:SettingUrlType){
+        let urlString:String
+        switch type {
+            case .privacy:
+                urlString = PRIVACY_POLICY_URL
+            case .terms:
+                urlString = TERMS_URL
+            case .help:
+                urlString = HELP_URL
+        }
+        guard let url = URL(string: urlString) else{
+            return
+        }
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
     }
 
 

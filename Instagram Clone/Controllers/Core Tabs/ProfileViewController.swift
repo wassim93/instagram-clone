@@ -17,12 +17,10 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func goToSettings(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: "General", bundle: nil)
-
-        let settingVc = storyboard.instantiateViewController(identifier: "SettingsViewController")
-        settingVc.modalPresentationStyle = .fullScreen
+        let settingVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "SettingsViewController")
         settingVc.title = AppHelper.getLocalizeString(str: "setting_vc_title")
         navigationController?.pushViewController(settingVc, animated: true)
+
     }
     /*
     // MARK: - Navigation

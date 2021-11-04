@@ -37,10 +37,7 @@ class HomeViewController: UIViewController {
 
     fileprivate func checkAuthentication() {
         if Auth.auth().currentUser == nil {
-            let storyboard = UIStoryboard.init(name: "Onboarding", bundle: nil)
-
-            let loginVc = storyboard.instantiateViewController(identifier: "LoginViewController")
-            loginVc.modalPresentationStyle = .fullScreen
+            let loginVc = AppHelper.initVcFromStoryboard(storyboardName: "Onboarding", vcIdentifier: "LoginViewController")
             DispatchQueue.main.async {
                 self.present(loginVc, animated: false)
             }

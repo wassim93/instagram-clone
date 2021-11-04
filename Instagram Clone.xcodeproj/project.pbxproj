@@ -53,6 +53,7 @@
 		CFE73A1B27303A6500C62961 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFE73A1D27303A6500C62961 /* Localizable.strings */; };
 		CFE73A222730456800C62961 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A212730456800C62961 /* AppHelper.swift */; };
 		CFE73A262730E25400C62961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A252730E25400C62961 /* Extensions.swift */; };
+		CFFFE021273439B300733DE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFFE020273439B300733DE0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		CFE73A1F27303A8800C62961 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFE73A212730456800C62961 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		CFE73A252730E25400C62961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CFFFE020273439B300733DE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E3C888FEA1CF684997C99293 /* Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDFCA0A61F187FCE7594326F /* Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -354,6 +356,7 @@
 				CF54E325272F1460003D9C31 /* StorageManager.swift */,
 				CFE73A212730456800C62961 /* AppHelper.swift */,
 				CFE73A252730E25400C62961 /* Extensions.swift */,
+				CFFFE020273439B300733DE0 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				CF1B8922272E01CF001DF2AD /* PublishPostViewController.swift in Sources */,
 				CF1B8907272E006C001DF2AD /* CameraViewController.swift in Sources */,
 				CFE73A222730456800C62961 /* AppHelper.swift in Sources */,
+				CFFFE021273439B300733DE0 /* Constants.swift in Sources */,
 				CF1B8909272E0082001DF2AD /* NotificationViewController.swift in Sources */,
 				CF7C753027335C7600432CCB /* IgFeedPostGeneralCell.swift in Sources */,
 				CF1B8912272E0119001DF2AD /* RegistrationViewController.swift in Sources */,
