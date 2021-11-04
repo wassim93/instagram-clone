@@ -56,4 +56,16 @@
 "notification_ui_title" = "Notifications";
 
 
+// Mark: - EditProfileScreen
+
+"save_title" = "Save";
+"cancel_title" = "Cancel";
+"change_pic_btn_title" = "Change profile photo";
+"action_sheet_msg" = "Do you want to change the profile photo?";
+"action_sheet_action1" = "Take a photo";
+"action_sheet_action2" = "Select from library";
+"action_sheet_action3" = "Cancel";
+
+
+
 

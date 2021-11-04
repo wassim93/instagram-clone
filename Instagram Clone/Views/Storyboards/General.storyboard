@@ -16,13 +16,80 @@
                     <view key="view" contentMode="scaleToFill" id="kpZ-ov-WFD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GH-KY-yRh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-y0-WiF" userLabel="image container">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-profile-male" translatesAutoresizingMaskIntoConstraints="NO" id="UO2-lr-PJg">
+                                                <rect key="frame" x="157" y="10" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="5i8-dc-7bj"/>
+                                                    <constraint firstAttribute="height" constant="100" id="qDa-iy-0GM"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-ew-2gp">
+                                                <rect key="frame" x="0.0" y="110" width="414" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="changePicAction:" destination="PMe-7D-Ifp" eventType="touchUpInside" id="Hg8-fu-hwH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="qmi-ew-2gp" firstAttribute="centerX" secondItem="8bE-y0-WiF" secondAttribute="centerX" id="6E3-M7-oeH"/>
+                                            <constraint firstItem="qmi-ew-2gp" firstAttribute="leading" secondItem="8bE-y0-WiF" secondAttribute="leading" id="9iE-MF-ADK"/>
+                                            <constraint firstItem="UO2-lr-PJg" firstAttribute="centerX" secondItem="8bE-y0-WiF" secondAttribute="centerX" id="Ir3-Gq-Ghz"/>
+                                            <constraint firstAttribute="trailing" secondItem="qmi-ew-2gp" secondAttribute="trailing" id="V9V-Su-5ph"/>
+                                            <constraint firstAttribute="bottom" secondItem="qmi-ew-2gp" secondAttribute="bottom" id="idB-LY-h1K"/>
+                                            <constraint firstItem="UO2-lr-PJg" firstAttribute="top" secondItem="8bE-y0-WiF" secondAttribute="top" constant="10" id="qEg-xT-QNx"/>
+                                            <constraint firstAttribute="height" constant="160" id="xFh-66-Ad1"/>
+                                            <constraint firstItem="qmi-ew-2gp" firstAttribute="top" secondItem="UO2-lr-PJg" secondAttribute="bottom" id="yB0-h6-ZQa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="8bE-y0-WiF" firstAttribute="centerX" secondItem="3GH-KY-yRh" secondAttribute="centerX" id="3q6-hp-Ngx"/>
+                                    <constraint firstItem="8bE-y0-WiF" firstAttribute="leading" secondItem="3GH-KY-yRh" secondAttribute="leading" id="RYy-K6-qZD"/>
+                                    <constraint firstItem="8bE-y0-WiF" firstAttribute="top" secondItem="3GH-KY-yRh" secondAttribute="top" id="TA0-0j-lHO"/>
+                                    <constraint firstAttribute="trailing" secondItem="8bE-y0-WiF" secondAttribute="trailing" id="Ywu-y7-Tf2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aIo-tU-R5z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aIo-tU-R5z" firstAttribute="bottom" secondItem="3GH-KY-yRh" secondAttribute="bottom" id="AZM-Ht-MTH"/>
+                            <constraint firstItem="3GH-KY-yRh" firstAttribute="top" secondItem="aIo-tU-R5z" secondAttribute="top" id="Dyl-bz-yXv"/>
+                            <constraint firstItem="3GH-KY-yRh" firstAttribute="leading" secondItem="aIo-tU-R5z" secondAttribute="leading" id="eUC-Hc-Hu1"/>
+                            <constraint firstItem="aIo-tU-R5z" firstAttribute="trailing" secondItem="3GH-KY-yRh" secondAttribute="trailing" id="hTb-gS-krE"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3x0-GX-E86">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Pkj-xz-UbU">
+                            <connections>
+                                <action selector="cancelAction:" destination="PMe-7D-Ifp" id="Mbu-ZO-et4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Ia6-sK-oXB">
+                            <connections>
+                                <action selector="saveAction:" destination="PMe-7D-Ifp" id="1xa-VV-CBo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelBtn" destination="Pkj-xz-UbU" id="Ldt-ci-beT"/>
+                        <outlet property="changePicBtn" destination="qmi-ew-2gp" id="gJI-gS-rDx"/>
+                        <outlet property="saveBtn" destination="Ia6-sK-oXB" id="8Zf-to-Arl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBc-OS-b9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="188"/>
+            <point key="canvasLocation" x="98.550724637681171" y="187.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -51,10 +118,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="65"/>
+            <point key="canvasLocation" x="944.92753623188412" y="64.955357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J6Z-4m-tn4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jEQ-dY-Mod" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Ra-Rf-6BB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PMe-7D-Ifp" kind="relationship" relationship="rootViewController" id="hX2-sg-ohi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luk-8Q-S5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-811.59420289855075" y="187.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="placeholder-profile-male" width="370" height="422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
