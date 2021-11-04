@@ -36,8 +36,20 @@
 
 "section_setting_title" = "Settings";
 "section_help_title" = "Support";
+"section_session_title" = "Session";
+"section_account_title" = "Account";
 "logout_alert_msg" = "Are you sure you want to log out ?";
 "no_msg" = "Cancel";
+"edit_profile_title" = "Edit profile";
+"invite_fr_title" = "Invite Friends";
+"save_posts_title" = "Save original posts";
+"terms_of_service" = "Terms of services";
+"privacy_policy" = "Privacy Policy";
+"help_feedback" = "Help";
+
+
+
+
 
 // Mark: - NotificationScreen
 

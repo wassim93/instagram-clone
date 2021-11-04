@@ -34,8 +34,16 @@
 "logout_title" = "Se déconnecter";
 "section_setting_title" = "Paramètres";
 "section_help_title" = "Support";
+"section_session_title" = "Session";
 "logout_alert_msg" = "Êtes-vous sûr de vouloir vous déconnecter?";
 "no_msg" = "Annuler";
+"section_account_title" = "Compte";
+"edit_profile_title" = "Editer le profil";
+"invite_fr_title" = "Inviter vos amis";
+"save_posts_title" = "Sauvegarder les messages";
+"terms_of_service" = "Conditions de services";
+"privacy_policy" = "Politique de confidentialité";
+"help_feedback" = "Aide";
 
 // Mark: - NotificationScreen
 

@@ -27,31 +27,48 @@ class SettingsViewController: UIViewController {
         tableview.delegate = self
         tableview.register(UINib(nibName: "SettingCell", bundle: nil), forCellReuseIdentifier: "SettingCell")
         tableview.register(UINib(nibName: "SettingHeaderCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "SettingHeaderCell")
-
     }
 
     /// function for creating our list of items thats should be displayed in each section
     fileprivate func configureUI() {
 
-        var section = [SettingCellModel(title: AppHelper.getLocalizeString(str: "logout_title"), handler: { [weak self] in
-            self?.didTapLogout()
-        }),SettingCellModel(title: "Language", handler: { [weak self] in
-             self?.didTapLanguage()
-        }),SettingCellModel(title: "PushNotificationSettings", handler: { [weak self] in
-            self?.didTapNotification()
-        })]
+        var section = [
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "edit_profile_title"), handler: { [weak self] in
+                self?.didTapEditProfile()
+            }),
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "invite_fr_title"), handler: { [weak self] in
+                self?.didTapInviteFriends()
+            }),
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "save_posts_title"), handler: { [weak self] in self?.didTapSavePosts()
+            })
+        ]
         /// appending first section items to the array
         data.append(section)
-        section = [SettingCellModel(title: "Help Center", handler: { [weak self] in
-            //self?.didTapLogout()
-        }),SettingCellModel(title: "Report a problem", handler: { [weak self] in
-            // self?.didTapLogout()
-        })]
+        section = [
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "terms_of_service"), handler: { [weak self] in
+                self?.didTapTermsServices()
+            }),
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "privacy_policy"), handler: { [weak self] in
+                self?.didTapPrivacyPolicy()
+            }),
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "help_feedback"), handler: { [weak self] in
+                self?.didTapHelp()
+            })
+        ]
 
         /// appending second section items to the array
         data.append(section)
+        section = [
+            SettingCellModel(title: AppHelper.getLocalizeString(str: "logout_title"), handler: { [weak self] in
+                self?.didTapLogout()
+            })
+        ]
+        /// appending last section  to the array
+        data.append(section)
     }
 
+
+    // MARK:- Actions
 
     private func didTapLogout(){
         let actionSheet =  UIAlertController(title: AppHelper.getLocalizeString(str: "logout_title"), message: AppHelper.getLocalizeString(str: "logout_alert_msg"), preferredStyle: .actionSheet)
@@ -81,16 +98,31 @@ class SettingsViewController: UIViewController {
 
         
     }
-    private func didTapLanguage(){
-        print("language clicked")
+    private func didTapEditProfile(){
+        print("profile clicked")
     }
-    private func didTapNotification(){
-        print("push notif clicked")
+    private func didTapInviteFriends(){
+        print("invite  clicked")
+    }
+    private func didTapSavePosts(){
+        print("save posts  clicked")
+    }
+
+    private func didTapPrivacyPolicy(){
+        print("privacy  clicked")
+    }
+    private func didTapTermsServices(){
+        print("terms  clicked")
+    }
+
+    private func didTapHelp(){
+        print("help  clicked")
     }
 
 
 }
 
+// MARK: - Extension
 
 extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,6 +149,8 @@ extension SettingsViewController : UITableViewDelegate,UITableViewDataSource{
                 headerView.headerTitleLbl.text = AppHelper.getLocalizeString(str: "section_setting_title")
             case 1:
                 headerView.headerTitleLbl.text = AppHelper.getLocalizeString(str: "section_help_title")
+            case 2:
+                headerView.headerTitleLbl.text = AppHelper.getLocalizeString(str: "section_session_title")
             default:
                 break
         }
