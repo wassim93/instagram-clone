@@ -20,43 +20,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GH-KY-yRh">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-y0-WiF" userLabel="image container">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-profile-male" translatesAutoresizingMaskIntoConstraints="NO" id="UO2-lr-PJg">
-                                                <rect key="frame" x="157" y="10" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="5i8-dc-7bj"/>
-                                                    <constraint firstAttribute="height" constant="100" id="qDa-iy-0GM"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-ew-2gp">
-                                                <rect key="frame" x="0.0" y="110" width="414" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <action selector="changePicAction:" destination="PMe-7D-Ifp" eventType="touchUpInside" id="Hg8-fu-hwH"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z6c-lQ-UIj">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="qmi-ew-2gp" firstAttribute="centerX" secondItem="8bE-y0-WiF" secondAttribute="centerX" id="6E3-M7-oeH"/>
-                                            <constraint firstItem="qmi-ew-2gp" firstAttribute="leading" secondItem="8bE-y0-WiF" secondAttribute="leading" id="9iE-MF-ADK"/>
-                                            <constraint firstItem="UO2-lr-PJg" firstAttribute="centerX" secondItem="8bE-y0-WiF" secondAttribute="centerX" id="Ir3-Gq-Ghz"/>
-                                            <constraint firstAttribute="trailing" secondItem="qmi-ew-2gp" secondAttribute="trailing" id="V9V-Su-5ph"/>
-                                            <constraint firstAttribute="bottom" secondItem="qmi-ew-2gp" secondAttribute="bottom" id="idB-LY-h1K"/>
-                                            <constraint firstItem="UO2-lr-PJg" firstAttribute="top" secondItem="8bE-y0-WiF" secondAttribute="top" constant="10" id="qEg-xT-QNx"/>
-                                            <constraint firstAttribute="height" constant="160" id="xFh-66-Ad1"/>
-                                            <constraint firstItem="qmi-ew-2gp" firstAttribute="top" secondItem="UO2-lr-PJg" secondAttribute="bottom" id="yB0-h6-ZQa"/>
-                                        </constraints>
-                                    </view>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="8bE-y0-WiF" firstAttribute="centerX" secondItem="3GH-KY-yRh" secondAttribute="centerX" id="3q6-hp-Ngx"/>
-                                    <constraint firstItem="8bE-y0-WiF" firstAttribute="leading" secondItem="3GH-KY-yRh" secondAttribute="leading" id="RYy-K6-qZD"/>
-                                    <constraint firstItem="8bE-y0-WiF" firstAttribute="top" secondItem="3GH-KY-yRh" secondAttribute="top" id="TA0-0j-lHO"/>
-                                    <constraint firstAttribute="trailing" secondItem="8bE-y0-WiF" secondAttribute="trailing" id="Ywu-y7-Tf2"/>
+                                    <constraint firstItem="z6c-lQ-UIj" firstAttribute="leading" secondItem="3GH-KY-yRh" secondAttribute="leading" id="GNi-v3-6D4"/>
+                                    <constraint firstItem="z6c-lQ-UIj" firstAttribute="top" secondItem="3GH-KY-yRh" secondAttribute="top" id="HvG-gP-9Wg"/>
+                                    <constraint firstAttribute="bottom" secondItem="z6c-lQ-UIj" secondAttribute="bottom" id="esH-Ub-Wx6"/>
+                                    <constraint firstAttribute="trailing" secondItem="z6c-lQ-UIj" secondAttribute="trailing" id="xlm-ui-Ohm"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -83,8 +57,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelBtn" destination="Pkj-xz-UbU" id="Ldt-ci-beT"/>
-                        <outlet property="changePicBtn" destination="qmi-ew-2gp" id="gJI-gS-rDx"/>
                         <outlet property="saveBtn" destination="Ia6-sK-oXB" id="8Zf-to-Arl"/>
+                        <outlet property="tableview" destination="z6c-lQ-UIj" id="W58-Xe-0il"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBc-OS-b9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,7 +114,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder-profile-male" width="370" height="422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -7,21 +7,74 @@
 
 import UIKit
 
+struct EditProfileModal {
+    let label: String
+    let placeholder: String
+    let value: String
+}
+
 class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var cancelBtn: UIBarButtonItem!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
-    @IBOutlet weak var changePicBtn: UIButton!
+    @IBOutlet weak var tableview: UITableView!
+    private var models = [[EditProfileModal]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelBtn.title = AppHelper.getLocalizeString(str: "cancel_title")
         saveBtn.title = AppHelper.getLocalizeString(str: "save_title")
-        changePicBtn.setTitle(AppHelper.getLocalizeString(str: "change_pic_btn_title"), for: .normal)
-
-        // Do any additional setup after loading the view.
+        tableview.delegate = self
+        tableview.dataSource = self
+        tableview.register(UINib(nibName: "EditProfileCell", bundle: nil), forCellReuseIdentifier: "EditProfileCell")
+        tableview.register(UINib(nibName: "EditProfileHeaderCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "EditProfileHeaderCell")
+        let section = [EditProfileModal(label: "Name", placeholder: "name", value: "")]
+        models.append(section)
     }
     
-    @IBAction func changePicAction(_ sender: Any) {
+   
+
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func saveAction(_ sender: Any) {
+
+    }
+}
+
+extension EditProfileViewController:UITableViewDelegate,UITableViewDataSource,EditProfileProtocol{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return models[section].count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfileCell", for: indexPath) as! EditProfileCell
+        cell.labelTxt.text = models[indexPath.section][indexPath.row].label
+        cell.valueTxt.placeholder = models[indexPath.section][indexPath.row].placeholder
+        cell.valueTxt.text = models[indexPath.section][indexPath.row].value
+
+        return cell
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = tableview.dequeueReusableHeaderFooterView(withIdentifier: "EditProfileHeaderCell") as! EditProfileHeaderCell
+        headerView.delegate = self
+        return headerView
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 140
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
+/// edit profile delegate
+    func showSheet() {
         let actionSheet =  UIAlertController(title: AppHelper.getLocalizeString(str: "change_pic_btn_title"), message: AppHelper.getLocalizeString(str: "action_sheet_msg"), preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: AppHelper.getLocalizeString(str: "action_sheet_action1"), style: .default, handler: { _ in
 
@@ -38,19 +91,5 @@ class EditProfileViewController: UIViewController {
         present(actionSheet, animated: true)
     }
 
-    @IBAction func cancelAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    @IBAction func saveAction(_ sender: Any) {
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

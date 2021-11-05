@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EditProfileHeaderCell" rowHeight="127" id="KGk-i7-Jjw" customClass="EditProfileHeaderCell" customModule="Instagram_Clone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEp-Bs-U3O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-profile-male" translatesAutoresizingMaskIntoConstraints="NO" id="gXr-RZ-FnE">
+                                <rect key="frame" x="120" y="10" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="N0p-jx-ZCH"/>
+                                    <constraint firstAttribute="height" constant="80" id="vXf-Uz-pmX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETY-mU-hFL">
+                                <rect key="frame" x="10" y="100" width="300" height="22"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="changePicAction:" destination="-2" eventType="touchUpInside" id="cSO-OJ-kdr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ETY-mU-hFL" secondAttribute="bottom" constant="5" id="0OC-ub-Ya8"/>
+                            <constraint firstAttribute="trailing" secondItem="ETY-mU-hFL" secondAttribute="trailing" constant="10" id="R8s-fP-A3D"/>
+                            <constraint firstItem="ETY-mU-hFL" firstAttribute="leading" secondItem="UEp-Bs-U3O" secondAttribute="leading" constant="10" id="Uh7-op-dzl"/>
+                            <constraint firstItem="ETY-mU-hFL" firstAttribute="centerX" secondItem="UEp-Bs-U3O" secondAttribute="centerX" id="kZf-Cr-gv3"/>
+                            <constraint firstItem="gXr-RZ-FnE" firstAttribute="centerX" secondItem="UEp-Bs-U3O" secondAttribute="centerX" id="tt1-0X-rES"/>
+                            <constraint firstItem="ETY-mU-hFL" firstAttribute="top" secondItem="gXr-RZ-FnE" secondAttribute="bottom" constant="10" id="wE1-bF-RUq"/>
+                            <constraint firstItem="gXr-RZ-FnE" firstAttribute="top" secondItem="UEp-Bs-U3O" secondAttribute="top" constant="10" id="y5z-vg-Kcu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UEp-Bs-U3O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jpm-77-OFU"/>
+                    <constraint firstAttribute="bottom" secondItem="UEp-Bs-U3O" secondAttribute="bottom" id="owP-J5-Bqp"/>
+                    <constraint firstAttribute="trailing" secondItem="UEp-Bs-U3O" secondAttribute="trailing" id="pnj-Va-wBa"/>
+                    <constraint firstItem="UEp-Bs-U3O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uu1-3g-z6J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="changePicBtn" destination="ETY-mU-hFL" id="Ydo-Oy-Bcu"/>
+            </connections>
+            <point key="canvasLocation" x="18.840579710144929" y="69.977678571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder-profile-male" width="370" height="422"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

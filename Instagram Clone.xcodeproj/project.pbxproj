@@ -54,6 +54,11 @@
 		CFE73A222730456800C62961 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A212730456800C62961 /* AppHelper.swift */; };
 		CFE73A262730E25400C62961 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE73A252730E25400C62961 /* Extensions.swift */; };
 		CFFFE021273439B300733DE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFFE020273439B300733DE0 /* Constants.swift */; };
+		CFFFE025273451D700733DE0 /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFFE023273451D700733DE0 /* EditProfileCell.swift */; };
+		CFFFE026273451D700733DE0 /* EditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFFE024273451D700733DE0 /* EditProfileCell.xib */; };
+		CFFFE029273451F100733DE0 /* EditProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFFE027273451F100733DE0 /* EditProfileHeaderCell.swift */; };
+		CFFFE02A273451F100733DE0 /* EditProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFFE028273451F100733DE0 /* EditProfileHeaderCell.xib */; };
+		CFFFE02C2734578F00733DE0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFFE02B2734578F00733DE0 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +138,11 @@
 		CFE73A212730456800C62961 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		CFE73A252730E25400C62961 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CFFFE020273439B300733DE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CFFFE023273451D700733DE0 /* EditProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
+		CFFFE024273451D700733DE0 /* EditProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileCell.xib; sourceTree = "<group>"; };
+		CFFFE027273451F100733DE0 /* EditProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeaderCell.swift; sourceTree = "<group>"; };
+		CFFFE028273451F100733DE0 /* EditProfileHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileHeaderCell.xib; sourceTree = "<group>"; };
+		CFFFE02B2734578F00733DE0 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E3C888FEA1CF684997C99293 /* Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDFCA0A61F187FCE7594326F /* Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram Clone-Instagram CloneUITests/Pods-Instagram Clone-Instagram CloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +249,7 @@
 		CF1B8900272DFF38001DF2AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CFFFE022273450FA00733DE0 /* EditProfileCustomCells */,
 				CFDEFAAD2731E99900935AED /* SettingsCustomCells */,
 				CF1B88D8272DFE66001DF2AD /* Assets.xcassets */,
 				CF1B8903272DFF81001DF2AD /* Storyboards */,
@@ -357,8 +368,20 @@
 				CFE73A212730456800C62961 /* AppHelper.swift */,
 				CFE73A252730E25400C62961 /* Extensions.swift */,
 				CFFFE020273439B300733DE0 /* Constants.swift */,
+				CFFFE02B2734578F00733DE0 /* Protocols.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CFFFE022273450FA00733DE0 /* EditProfileCustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				CFFFE023273451D700733DE0 /* EditProfileCell.swift */,
+				CFFFE024273451D700733DE0 /* EditProfileCell.xib */,
+				CFFFE027273451F100733DE0 /* EditProfileHeaderCell.swift */,
+				CFFFE028273451F100733DE0 /* EditProfileHeaderCell.xib */,
+			);
+			path = EditProfileCustomCells;
 			sourceTree = "<group>";
 		};
 		EE955C2B3F23480652F7846A /* Pods */ = {
@@ -490,12 +513,14 @@
 				CF54E31F272F08CE003D9C31 /* GoogleService-Info.plist in Resources */,
 				CF1B88D9272DFE66001DF2AD /* Assets.xcassets in Resources */,
 				CF7C7524273359AB00432CCB /* IgFeedPostCell.xib in Resources */,
+				CFFFE02A273451F100733DE0 /* EditProfileHeaderCell.xib in Resources */,
 				CF1B88D7272DFE64001DF2AD /* Main.storyboard in Resources */,
 				CFDEFAAC2731E6A600935AED /* SettingHeaderCell.xib in Resources */,
 				CF7C753127335C7600432CCB /* IgFeedPostGeneralCell.xib in Resources */,
 				CF7C752D27335C6300432CCB /* IgFeedPostActionsCell.xib in Resources */,
 				CFDEFAA82731DF5500935AED /* SettingCell.xib in Resources */,
 				CFDEFAA42731DBBD00935AED /* General.storyboard in Resources */,
+				CFFFE026273451D700733DE0 /* EditProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,12 +663,14 @@
 				CF1B8914272E013A001DF2AD /* PostViewController.swift in Sources */,
 				CF54E322272F1090003D9C31 /* DatabaseManager.swift in Sources */,
 				CF7C752C27335C6300432CCB /* IgFeedPostActionsCell.swift in Sources */,
+				CFFFE02C2734578F00733DE0 /* Protocols.swift in Sources */,
 				CF1B88D4272DFE64001DF2AD /* HomeViewController.swift in Sources */,
 				CFDEFAA72731DF5500935AED /* SettingCell.swift in Sources */,
 				CF7C752827335C1500432CCB /* IgFeedPostHeaderCell.swift in Sources */,
 				CF1B891E272E0196001DF2AD /* SearchResultViewController.swift in Sources */,
 				CF1B8910272E010C001DF2AD /* LoginViewController.swift in Sources */,
 				CF1B891C272E0180001DF2AD /* SearchViewController.swift in Sources */,
+				CFFFE025273451D700733DE0 /* EditProfileCell.swift in Sources */,
 				CFDEFAAB2731E6A600935AED /* SettingHeaderCell.swift in Sources */,
 				CF1B890B272E008C001DF2AD /* ProfileViewController.swift in Sources */,
 				CF7C7523273359AB00432CCB /* IgFeedPostCell.swift in Sources */,
@@ -651,6 +678,7 @@
 				CF1B88D0272DFE64001DF2AD /* AppDelegate.swift in Sources */,
 				CF1B88D2272DFE64001DF2AD /* SceneDelegate.swift in Sources */,
 				CF1B891A272E0175001DF2AD /* ListViewController.swift in Sources */,
+				CFFFE029273451F100733DE0 /* EditProfileHeaderCell.swift in Sources */,
 				CF1B8918272E015C001DF2AD /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
