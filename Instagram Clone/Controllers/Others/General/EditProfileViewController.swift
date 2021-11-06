@@ -10,7 +10,7 @@ import UIKit
 struct EditProfileModal {
     let label: String
     let placeholder: String
-    let value: String?
+    var value: String?
 }
 
 class EditProfileViewController: UIViewController {
@@ -69,9 +69,8 @@ extension EditProfileViewController:UITableViewDelegate,UITableViewDataSource,Ed
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfileCell", for: indexPath) as! EditProfileCell
-        cell.labelTxt.text = models[indexPath.section][indexPath.row].label
-        cell.valueTxt.placeholder = models[indexPath.section][indexPath.row].placeholder
-        cell.valueTxt.text = models[indexPath.section][indexPath.row].value
+        cell.delegate = self
+        cell.configureModel(model: models[indexPath.section][indexPath.row])
         return cell
     }
 
@@ -110,6 +109,12 @@ extension EditProfileViewController:UITableViewDelegate,UITableViewDataSource,Ed
 
         present(actionSheet, animated: true)
     }
+
+    func didUpdateTextValue(cell: EditProfileCell, updatedModel model: EditProfileModal?) {
+        //print("updated\(model)")
+
+    }
+  
 
 
 }

@@ -9,5 +9,8 @@ import UIKit
 
 
 protocol EditProfileProtocol: NSObjectProtocol {
+    /// function to show action sheet from tableviewcell
     func showSheet() -> Void
+    /// function to fill the parameter updatedModel with the current textfield value
+    func didUpdateTextValue(cell: EditProfileCell,updatedModel model: EditProfileModal?) -> Void
 }
