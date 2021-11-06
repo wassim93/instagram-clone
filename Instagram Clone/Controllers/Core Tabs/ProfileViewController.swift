@@ -64,6 +64,11 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        // get the model and open post controller
+        let postVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "PostViewController")
+        postVc.title = AppHelper.getLocalizeString(str: "post_title")
+        postVc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(postVc, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
