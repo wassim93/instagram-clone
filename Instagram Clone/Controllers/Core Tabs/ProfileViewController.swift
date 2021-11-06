@@ -39,7 +39,7 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width/3, height: view.frame.width/3)
+        return CGSize(width: (view.frame.width-4)/3, height: (view.frame.width-4)/3)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,6 +47,14 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
         cell.backgroundColor = .blue
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
 
 
 }
