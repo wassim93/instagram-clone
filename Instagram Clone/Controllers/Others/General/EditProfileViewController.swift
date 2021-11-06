@@ -10,7 +10,7 @@ import UIKit
 struct EditProfileModal {
     let label: String
     let placeholder: String
-    let value: String
+    let value: String?
 }
 
 class EditProfileViewController: UIViewController {
@@ -19,6 +19,8 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var saveBtn: UIBarButtonItem!
     @IBOutlet weak var tableview: UITableView!
     private var models = [[EditProfileModal]]()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelBtn.title = AppHelper.getLocalizeString(str: "cancel_title")
@@ -27,8 +29,13 @@ class EditProfileViewController: UIViewController {
         tableview.dataSource = self
         tableview.register(UINib(nibName: "EditProfileCell", bundle: nil), forCellReuseIdentifier: "EditProfileCell")
         tableview.register(UINib(nibName: "EditProfileHeaderCell", bundle: nil), forHeaderFooterViewReuseIdentifier: "EditProfileHeaderCell")
-        let section = [EditProfileModal(label: "Name", placeholder: "name", value: "")]
-        models.append(section)
+        configureModels()
+    }
+
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
     }
     
    
@@ -38,6 +45,20 @@ class EditProfileViewController: UIViewController {
     }
     @IBAction func saveAction(_ sender: Any) {
 
+    }
+
+
+    fileprivate func configureModels() {
+        let section = [
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "name_lbl"), placeholder: AppHelper.getLocalizeString(str: "name_placeholder"), value: nil),
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "username_lbl"), placeholder: AppHelper.getLocalizeString(str: "username_placeholder"), value: nil),
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "bio_lbl"), placeholder: AppHelper.getLocalizeString(str: "bio_placeholder"), value: nil),
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "website_lbl"), placeholder: AppHelper.getLocalizeString(str: "website_placeholder"), value: nil),
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "email_lbl"), placeholder: AppHelper.getLocalizeString(str: "email_placeholder"), value: nil),
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "phone_lbl"), placeholder: AppHelper.getLocalizeString(str: "phone_placeholder"), value: nil),
+            EditProfileModal(label: AppHelper.getLocalizeString(str: "gender_lbl"), placeholder: AppHelper.getLocalizeString(str: "gender_placeholder"), value: nil),
+        ]
+        models.append(section)
     }
 }
 
@@ -51,7 +72,6 @@ extension EditProfileViewController:UITableViewDelegate,UITableViewDataSource,Ed
         cell.labelTxt.text = models[indexPath.section][indexPath.row].label
         cell.valueTxt.placeholder = models[indexPath.section][indexPath.row].placeholder
         cell.valueTxt.text = models[indexPath.section][indexPath.row].value
-
         return cell
     }
 

@@ -66,6 +66,22 @@
 "action_sheet_action2" = "Select from library";
 "action_sheet_action3" = "Cancel";
 
+"name_lbl"= "Name";
+"username_lbl" = "Username";
+"bio_lbl" = "Bio";
+"website_lbl"= "Website";
+"email_lbl" = "Email";
+"phone_lbl" = "Phone";
+"gender_lbl" = "Gender";
+
+"name_placeholder"= "Your Name...";
+"username_placeholder" = "Username...";
+"bio_placeholder" = "Bio...";
+"website_placeholder"= "www.yourwebsite.com";
+"email_placeholder" = "Email...";
+"phone_placeholder" = "Phone Number...";
+"gender_placeholder" = "Gender...";
+
 
 
 
