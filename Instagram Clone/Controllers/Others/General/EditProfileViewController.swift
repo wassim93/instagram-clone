@@ -44,6 +44,8 @@ class EditProfileViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func saveAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        // save to db
 
     }
 
