@@ -10,6 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    private var userPosts = [UserPost]()
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -38,6 +39,7 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
         if section == 0 {
             return 0
         }
+        //return userPosts.count
         return 30
     }
 
@@ -51,7 +53,9 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
+        //let model = userPosts[indexPath.row]
         cell.configure(debug: "goku_ultra_instinct")
+        //cell.configure(with: model)
         return cell
     }
 
@@ -65,9 +69,11 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         // get the model and open post controller
-        let postVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "PostViewController")
+        //let model = userPosts[indexPath.row]
+        let postVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "PostViewController") as! PostViewController
         postVc.title = AppHelper.getLocalizeString(str: "post_title")
         postVc.navigationItem.largeTitleDisplayMode = .never
+        postVc.model = nil
         navigationController?.pushViewController(postVc, animated: true)
     }
 
