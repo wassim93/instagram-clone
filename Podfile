@@ -18,6 +18,9 @@ pod 'Firebase/Storage'
 #Dropdown
 pod 'DropDown'
 
+#ImageDownloader & caching
+pod 'SDWebImage'
+
 
 
 

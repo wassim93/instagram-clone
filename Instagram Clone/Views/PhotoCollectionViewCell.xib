@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,10 +17,41 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="174" height="93"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCQ-BO-zJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="174" height="93"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGp-gI-AEY">
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="93"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pGp-gI-AEY" firstAttribute="top" secondItem="dCQ-BO-zJ5" secondAttribute="top" id="A0x-Of-4xE"/>
+                            <constraint firstAttribute="bottom" secondItem="pGp-gI-AEY" secondAttribute="bottom" id="Bbk-fu-K8l"/>
+                            <constraint firstAttribute="trailing" secondItem="pGp-gI-AEY" secondAttribute="trailing" id="PME-rh-SFv"/>
+                            <constraint firstItem="pGp-gI-AEY" firstAttribute="leading" secondItem="dCQ-BO-zJ5" secondAttribute="leading" id="cbx-Yx-ixg"/>
+                        </constraints>
+                    </view>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dCQ-BO-zJ5" secondAttribute="trailing" id="A8r-lo-ajf"/>
+                <constraint firstItem="dCQ-BO-zJ5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Akx-Ei-U0f"/>
+                <constraint firstAttribute="bottom" secondItem="dCQ-BO-zJ5" secondAttribute="bottom" id="Bg2-J2-m7L"/>
+                <constraint firstItem="dCQ-BO-zJ5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UbQ-Hv-UQR"/>
+            </constraints>
             <size key="customSize" width="174" height="93"/>
+            <connections>
+                <outlet property="imageView" destination="pGp-gI-AEY" id="ZQG-5r-AOM"/>
+            </connections>
             <point key="canvasLocation" x="108.69565217391305" y="57.924107142857139"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
