@@ -90,7 +90,8 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
 
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileInfoHeaderCollectionReusableView", for: indexPath) as! ProfileInfoHeaderCollectionReusableView
-        profileHeader.backgroundColor = .orange
+        //profileHeader.backgroundColor = .orange
+        //profileHeader.postNbLbl.text = "100"
         return profileHeader
     }
 
