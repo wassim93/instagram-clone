@@ -18,8 +18,8 @@ class ProfileViewController: UIViewController {
         // cell
         collectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PhotoCollectionViewCell")
         // headers
-        collectionView.register(ProfileInfoHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileInfoHeaderCollectionReusableView")
-        collectionView.register(ProfileTabsCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileTabsCollectionReusableView")
+        collectionView.register(UINib(nibName: "ProfileInfoHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileInfoHeaderCollectionReusableView")
+        collectionView.register(UINib(nibName: "ProfileTabsCollectionReusableView",bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileTabsCollectionReusableView")
 
     }
     
@@ -73,7 +73,7 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
         let postVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "PostViewController") as! PostViewController
         postVc.title = AppHelper.getLocalizeString(str: "post_title")
         postVc.navigationItem.largeTitleDisplayMode = .never
-        postVc.model = nil
+        //postVc.model = nil
         navigationController?.pushViewController(postVc, animated: true)
     }
 
@@ -92,6 +92,8 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileInfoHeaderCollectionReusableView", for: indexPath) as! ProfileInfoHeaderCollectionReusableView
         //profileHeader.backgroundColor = .orange
         //profileHeader.postNbLbl.text = "100"
+
+
         return profileHeader
     }
 
@@ -99,11 +101,15 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         /// header size
         if section == 0 {
-            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height/3)
+            let indexPath = IndexPath(row: 0, section: section)
+
+            let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath)
+
+            return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: collectionView.frame.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
         }
 
         /// section tabs size
-        return CGSize(width: collectionView.bounds.width, height: 65)
+        return CGSize(width: collectionView.bounds.width, height: 50)
 
     }
 
