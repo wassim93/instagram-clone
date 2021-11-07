@@ -31,6 +31,8 @@
 		CF1B891E272E0196001DF2AD /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B891D272E0196001DF2AD /* SearchResultViewController.swift */; };
 		CF1B8920272E01B4001DF2AD /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B891F272E01B4001DF2AD /* PostEditorViewController.swift */; };
 		CF1B8922272E01CF001DF2AD /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */; };
+		CF412EBF2738923E00BACEFC /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412EBD2738923E00BACEFC /* ListCell.swift */; };
+		CF412EC02738923E00BACEFC /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF412EBE2738923E00BACEFC /* ListCell.xib */; };
 		CF54E31F272F08CE003D9C31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF54E31E272F08CE003D9C31 /* GoogleService-Info.plist */; };
 		CF54E322272F1090003D9C31 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E321272F1090003D9C31 /* DatabaseManager.swift */; };
 		CF54E324272F141A003D9C31 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54E323272F141A003D9C31 /* AuthManager.swift */; };
@@ -121,6 +123,8 @@
 		CF1B891D272E0196001DF2AD /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		CF1B891F272E01B4001DF2AD /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		CF1B8921272E01CF001DF2AD /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
+		CF412EBD2738923E00BACEFC /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		CF412EBE2738923E00BACEFC /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		CF54E31E272F08CE003D9C31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF54E321272F1090003D9C31 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		CF54E323272F141A003D9C31 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				CF7C752527335A0800432CCB /* HomeCustomCells */,
 				CFFD70352736225B00DB40FF /* PhotoCollectionViewCell.swift */,
 				CFFD70362736225B00DB40FF /* PhotoCollectionViewCell.xib */,
+				CF412EC12738924900BACEFC /* ListViewCustomCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +339,15 @@
 				CF1B8911272E0119001DF2AD /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CF412EC12738924900BACEFC /* ListViewCustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				CF412EBD2738923E00BACEFC /* ListCell.swift */,
+				CF412EBE2738923E00BACEFC /* ListCell.xib */,
+			);
+			path = ListViewCustomCells;
 			sourceTree = "<group>";
 		};
 		CF54E320272F1014003D9C31 /* General */ = {
@@ -548,6 +562,7 @@
 				CFDEFAAC2731E6A600935AED /* SettingHeaderCell.xib in Resources */,
 				CF7C753127335C7600432CCB /* IgFeedPostGeneralCell.xib in Resources */,
 				CF7C752D27335C6300432CCB /* IgFeedPostActionsCell.xib in Resources */,
+				CF412EC02738923E00BACEFC /* ListCell.xib in Resources */,
 				CFFD70402736231800DB40FF /* ProfileTabsCollectionReusableView.xib in Resources */,
 				CFDEFAA82731DF5500935AED /* SettingCell.xib in Resources */,
 				CFFD70382736225B00DB40FF /* PhotoCollectionViewCell.xib in Resources */,
@@ -705,6 +720,7 @@
 				CF1B891E272E0196001DF2AD /* SearchResultViewController.swift in Sources */,
 				CFFD70372736225B00DB40FF /* PhotoCollectionViewCell.swift in Sources */,
 				CF1B8910272E010C001DF2AD /* LoginViewController.swift in Sources */,
+				CF412EBF2738923E00BACEFC /* ListCell.swift in Sources */,
 				CF1B891C272E0180001DF2AD /* SearchViewController.swift in Sources */,
 				CFFFE025273451D700733DE0 /* EditProfileCell.swift in Sources */,
 				CFDEFAAB2731E6A600935AED /* SettingHeaderCell.swift in Sources */,

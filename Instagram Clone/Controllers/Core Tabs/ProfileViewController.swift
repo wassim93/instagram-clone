@@ -123,7 +123,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func didTapFollowersView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
         print("followers click")
-        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController")
+        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController") as! ListViewController
+        vc.data = ["john","ali","salah"]
         vc.title = AppHelper.getLocalizeString(str: "followers_title")
         navigationController?.pushViewController(vc, animated: true)
 
@@ -131,7 +132,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func didTapFollowingView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
         print("following click")
-        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController")
+        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController") as! ListViewController
+        vc.data = ["wassim","test","salah"]
         vc.title = AppHelper.getLocalizeString(str: "following_title")
         navigationController?.pushViewController(vc, animated: true)
 
