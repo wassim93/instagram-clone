@@ -22,22 +22,22 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRQ-S4-1sB">
-                                    <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="159.5" height="50"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                    <state key="normal" image="square.grid.2x2" catalog="system"/>
+                                    <connections>
+                                        <action selector="gridActionBtn:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="JzD-B1-Ezg"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tu-dH-Pea">
-                                    <rect key="frame" x="107" y="0.0" width="106" height="50"/>
+                                    <rect key="frame" x="160.5" y="0.0" width="159.5" height="50"/>
                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="square.and.arrow.up.on.square" catalog="system"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwt-ZG-qo0">
-                                    <rect key="frame" x="214" y="0.0" width="106" height="50"/>
-                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="pencil.circle" catalog="system"/>
+                                    <state key="normal" image="tag" catalog="system"/>
+                                    <connections>
+                                        <action selector="tagActionBtn:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="owW-Bc-gew"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,13 +59,16 @@
                 <constraint firstItem="YEb-Hy-4rd" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="mGY-Sh-Iod"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="YEb-Hy-4rd" secondAttribute="trailing" id="pvh-m5-xUH"/>
             </constraints>
+            <connections>
+                <outlet property="gridBtn" destination="DRQ-S4-1sB" id="It1-ay-TlF"/>
+                <outlet property="tagBtn" destination="3tu-dH-Pea" id="7hS-9V-bTG"/>
+            </connections>
             <point key="canvasLocation" x="20" y="44"/>
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="pencil.circle" catalog="system" width="128" height="121"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="tag" catalog="system" width="128" height="119"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

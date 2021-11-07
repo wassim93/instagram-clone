@@ -32,7 +32,6 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,ProfileProtocol {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return 0
@@ -83,14 +82,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if indexPath.section == 1 {
             // tabs header
             let tabsHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileTabsCollectionReusableView", for: indexPath) as! ProfileTabsCollectionReusableView
-            tabsHeader.backgroundColor = .red
+            tabsHeader.delegate = self
             return tabsHeader
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileInfoHeaderCollectionReusableView", for: indexPath) as! ProfileInfoHeaderCollectionReusableView
         //profileHeader.postNbLbl.text = "100"
         profileHeader.delegate = self
-
-
         return profileHeader
     }
 
@@ -98,17 +95,13 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         /// header size
         if section == 0 {
-
             let indexPath = IndexPath(row: 0, section: section)
-
             let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath)
             // make size fit contents
             return headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: collectionView.frame.height), withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
         }
-
         /// section tabs size
         return CGSize(width: collectionView.bounds.width, height: 50)
-
     }
 
     //MARK:- ProfileProtocolDelegate
@@ -145,4 +138,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
 
+    func didTapGridBtn(header profileHeader: ProfileTabsCollectionReusableView) {
+        print("grid tapped")
+    }
+
+    func didTapTagBtn(header profileHeader: ProfileTabsCollectionReusableView) {
+        print("tag tapped")
+
+    }
 }
