@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 class PhotoCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -19,9 +19,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
      func configure(with model:UserPost) {
         let thumbnailURL = model.thumbnailImage
-        imageView.sd_setImage(with: thumbnailURL) { res, error, _, _ in
-            //
-        }
+        imageView.kf.setImage(with: thumbnailURL)
+
        
         //
     }

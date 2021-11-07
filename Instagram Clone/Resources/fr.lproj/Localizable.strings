@@ -84,6 +84,15 @@
 
 
 
+// Mark: - ProfileHeaderSectionScreen
+"followers_title" = "Abonnes";
+"following_title" = "Abonnements";
+"posts_title" = "Publications";
+"btn_edit_title" = "Modifier Profile";
+
+
+
+
 
 
 

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,8 +14,60 @@
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileTabsCollectionReusableView" id="U6b-Vx-4bR" customClass="ProfileTabsCollectionReusableView" customModule="Instagram_Clone" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-Hy-4rd">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mLv-tj-Jl1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRQ-S4-1sB">
+                                    <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3tu-dH-Pea">
+                                    <rect key="frame" x="107" y="0.0" width="106" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="square.and.arrow.up.on.square" catalog="system"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwt-ZG-qo0">
+                                    <rect key="frame" x="214" y="0.0" width="106" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="pencil.circle" catalog="system"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstItem="mLv-tj-Jl1" firstAttribute="leading" secondItem="YEb-Hy-4rd" secondAttribute="leading" id="3FI-qy-9iE"/>
+                        <constraint firstAttribute="bottom" secondItem="mLv-tj-Jl1" secondAttribute="bottom" id="96G-gD-reE"/>
+                        <constraint firstItem="mLv-tj-Jl1" firstAttribute="top" secondItem="YEb-Hy-4rd" secondAttribute="top" id="ZWe-M5-RKR"/>
+                        <constraint firstAttribute="trailing" secondItem="mLv-tj-Jl1" secondAttribute="trailing" id="sfG-WG-1fx"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="YEb-Hy-4rd" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="CyU-aB-IPr"/>
+                <constraint firstAttribute="bottom" secondItem="YEb-Hy-4rd" secondAttribute="bottom" id="R9S-oN-d9n"/>
+                <constraint firstItem="YEb-Hy-4rd" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="mGY-Sh-Iod"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="YEb-Hy-4rd" secondAttribute="trailing" id="pvh-m5-xUH"/>
+            </constraints>
             <point key="canvasLocation" x="20" y="44"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

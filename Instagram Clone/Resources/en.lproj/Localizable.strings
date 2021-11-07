@@ -88,5 +88,13 @@
 "post_title" = "Post";
 
 
+// Mark: - ProfileHeaderSectionScreen
+"followers_title" = "Followers";
+"following_title" = "Following";
+"posts_title" = "Posts";
+"btn_edit_title" = "Edit Profile";
+
+
+
 
 

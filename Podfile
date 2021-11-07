@@ -19,7 +19,7 @@ pod 'Firebase/Storage'
 pod 'DropDown'
 
 #ImageDownloader & caching
-pod 'SDWebImage'
+pod 'Kingfisher', '~> 6.0'
 
 
 
