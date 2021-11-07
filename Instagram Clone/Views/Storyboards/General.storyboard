@@ -154,6 +154,21 @@
             </objects>
             <point key="canvasLocation" x="-465" y="-485"/>
         </scene>
+        <!--List View Controller-->
+        <scene sceneID="mdW-Nz-wxg">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="GWh-Tq-kEj" customClass="ListViewController" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BaT-aP-4aI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gO0-Or-0Mo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qtq-ir-22R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433" y="-1158"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

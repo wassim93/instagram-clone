@@ -28,13 +28,11 @@ class ProfileViewController: UIViewController {
         let settingVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "SettingsViewController")
         settingVc.title = AppHelper.getLocalizeString(str: "setting_vc_title")
         navigationController?.pushViewController(settingVc, animated: true)
-
     }
-
-
 }
 
-extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,ProfileProtocol {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return 0
@@ -87,11 +85,10 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
             let tabsHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileTabsCollectionReusableView", for: indexPath) as! ProfileTabsCollectionReusableView
             tabsHeader.backgroundColor = .red
             return tabsHeader
-
         }
         let profileHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProfileInfoHeaderCollectionReusableView", for: indexPath) as! ProfileInfoHeaderCollectionReusableView
-        //profileHeader.backgroundColor = .orange
         //profileHeader.postNbLbl.text = "100"
+        profileHeader.delegate = self
 
 
         return profileHeader
@@ -111,6 +108,39 @@ extension ProfileViewController:UICollectionViewDelegate,UICollectionViewDataSou
 
         /// section tabs size
         return CGSize(width: collectionView.bounds.width, height: 50)
+
+    }
+
+    //MARK:- ProfileProtocolDelegate
+
+    func didTapEditProfile(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
+        print("edit click")
+        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "EditProfileViewController")
+        vc.title = AppHelper.getLocalizeString(str: "edit_profile_title")
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+
+    }
+
+    func didTapPostView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
+        /// scroll to post list
+        collectionView.scrollToItem(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
+    }
+
+    func didTapFollowersView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
+        print("followers click")
+        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController")
+        vc.title = AppHelper.getLocalizeString(str: "followers_title")
+        navigationController?.pushViewController(vc, animated: true)
+
+    }
+
+    func didTapFollowingView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
+        print("following click")
+        let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController")
+        vc.title = AppHelper.getLocalizeString(str: "following_title")
+        navigationController?.pushViewController(vc, animated: true)
 
     }
 

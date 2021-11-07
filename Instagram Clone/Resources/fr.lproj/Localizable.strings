@@ -25,12 +25,9 @@
 "email_placeholder" = "Adresse Email";
 "register_btn_title"= "S'inscrire";
 
-// Mark: - ProfileScreen
-"setting_vc_title" = "Options";
-
 
 // Mark: - SettingsScreen
-
+"setting_vc_title" = "Options";
 "logout_title" = "Se déconnecter";
 "section_setting_title" = "Paramètres";
 "section_help_title" = "Support";

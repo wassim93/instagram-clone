@@ -27,13 +27,11 @@
 "email_placeholder" = "Email";
 "register_btn_title"= "Sign up";
 
-// Mark: - ProfileScreen
-"setting_vc_title" = "Options";
 
 // Mark: - SettingsScreen
 
 "logout_title" = "Log Out";
-
+"setting_vc_title" = "Options";
 "section_setting_title" = "Settings";
 "section_help_title" = "Support";
 "section_session_title" = "Session";

@@ -14,3 +14,13 @@ protocol EditProfileProtocol: NSObjectProtocol {
     /// function to fill the parameter updatedModel with the current textfield value
     func didUpdateTextValue(cell: EditProfileCell,updatedModel model: EditProfileModal?) -> Void
 }
+
+//MARK: - Profile
+protocol ProfileProtocol:NSObjectProtocol {
+    func didTapEditProfile(header profileHeader:ProfileInfoHeaderCollectionReusableView) -> Void
+    func didTapPostView(header profileHeader:ProfileInfoHeaderCollectionReusableView) -> Void
+    func didTapFollowersView(header profileHeader:ProfileInfoHeaderCollectionReusableView) -> Void
+    func didTapFollowingView(header profileHeader:ProfileInfoHeaderCollectionReusableView) -> Void
+
+    
+}
