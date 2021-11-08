@@ -10,8 +10,8 @@ import UIKit
 class ListViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
-    var data:[String]
-    init(data:[String]) {
+    var data:[UserRelationship]
+    init(data:[UserRelationship]) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
@@ -26,13 +26,15 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource  = self
-        tableview.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "ListCell")
+        tableview.register(UINib(nibName: "UserFollowCell", bundle: nil), forCellReuseIdentifier: "UserFollowCell")
 
     }
 }
 
 
-extension ListViewController:UITableViewDelegate,UITableViewDataSource{
+extension ListViewController:UITableViewDelegate,UITableViewDataSource,UserFollowProtocol{
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -42,8 +44,9 @@ extension ListViewController:UITableViewDelegate,UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListCell
-        cell.labelTxt.text = data[indexPath.row]
+        let cell = tableview.dequeueReusableCell(withIdentifier: "UserFollowCell", for: indexPath) as! UserFollowCell
+        cell.configure(with: data[indexPath.row])
+        cell.delegate = self
         return cell
     }
 
@@ -53,7 +56,19 @@ extension ListViewController:UITableViewDelegate,UITableViewDataSource{
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return 75
+    }
+
+
+    func didTapFollowUnfollowBtn(model: UserRelationship) {
+        switch model.type {
+            case .following:
+                // perform firebase update to unfollow
+                break
+            case .not_following:
+                // perform firebase update to follow
+                break
+        }
     }
 
 

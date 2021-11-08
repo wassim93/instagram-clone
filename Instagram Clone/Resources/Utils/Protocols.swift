@@ -32,5 +32,15 @@ protocol ProfileProtocol:NSObjectProtocol {
 }
 
 
+//MARK: - ListViewController // followers,following
+protocol UserFollowProtocol:NSObjectProtocol {
+    func didTapFollowUnfollowBtn(model:UserRelationship) -> Void 
+}
+
+
+
+
+
+
 
 

@@ -40,8 +40,8 @@ class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageview.layer.cornerRadius =  imageview.frame.height/2
-        imageview.clipsToBounds = true
+        imageview.layer.masksToBounds = true
+        imageview.layer.cornerRadius =  (imageview.bounds.height-3)/2
     }
 
     fileprivate func setupGesture() {

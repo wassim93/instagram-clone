@@ -124,7 +124,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func didTapFollowersView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
         print("followers click")
         let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController") as! ListViewController
-        vc.data = ["john","ali","salah"]
+        let mockData = [
+            UserRelationship(username: "wassimmou", name: "wassimBh", type: .following),
+            UserRelationship(username: "kings", name: "johnDoe", type: .not_following),
+            UserRelationship(username: "zultra", name: "John Test", type: .following),
+        ]
+        vc.data = mockData
         vc.title = AppHelper.getLocalizeString(str: "followers_title")
         navigationController?.pushViewController(vc, animated: true)
 
@@ -133,7 +138,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func didTapFollowingView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
         print("following click")
         let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController") as! ListViewController
-        vc.data = ["wassim","test","salah"]
+        let mockData = [
+            UserRelationship(username: "testing", name: "User@", type: .following),
+            UserRelationship(username: "mc1", name: "mickel conord", type: .not_following),
+            UserRelationship(username: "software engineer", name: "teach ios", type: .following),
+        ]
+        vc.data = mockData
         vc.title = AppHelper.getLocalizeString(str: "following_title")
         navigationController?.pushViewController(vc, animated: true)
 

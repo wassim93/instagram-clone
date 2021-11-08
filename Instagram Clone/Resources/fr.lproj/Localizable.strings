@@ -88,6 +88,11 @@
 "btn_edit_title" = "Modifier Profile";
 
 
+// Mark: - UserFollowCell
+"follow_title" = "S'abonner";
+"unfollow_title" = "Se desabonner";
+
+
 
 
 
