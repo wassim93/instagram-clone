@@ -38,19 +38,20 @@ class NotificationLikeEventCell: UITableViewCell {
     func configure(with model:UserNotification){
         self.model = model
         usernameLbl.text =  "\(model.user.username) "+model.text
-        guard !model.user.profilePic.absoluteString.contains("google.com") else{
-            return
-        }
-        imgUser.kf.setImage(with: model.user.profilePic)
+
         switch model.type {
             case .like(let post):
                 let thumbnail = post.thumbnailImage
-
+                guard !thumbnail.absoluteString.contains("google.com") else{
+                    return
+                }
                 postImg.kf.setImage(with: thumbnail)
                 break
             case .follow:
                 break
         }
+
+        imgUser.kf.setImage(with: model.user.profilePic)
 
     }
     
