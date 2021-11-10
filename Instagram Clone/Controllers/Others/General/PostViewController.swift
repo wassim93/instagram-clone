@@ -105,7 +105,17 @@ extension PostViewController:UITableViewDelegate,UITableViewDataSource{
         return 40
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        let model = renderModels[indexPath.section]
+        switch model.renderType {
+            case .header(_):
+                return 70
+            case .primaryContent(_):
+                return tableview.frame.width
+            case .actions(_):
+                return 60
+            case .comments(_):
+                return 50
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
