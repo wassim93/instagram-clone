@@ -283,7 +283,7 @@
 				CFDEFAAD2731E99900935AED /* SettingsCustomCells */,
 				CF1B88D8272DFE66001DF2AD /* Assets.xcassets */,
 				CF1B8903272DFF81001DF2AD /* Storyboards */,
-				CF7C752527335A0800432CCB /* HomeCustomCells */,
+				CF7C752527335A0800432CCB /* HomeCustomCells & Post */,
 				CFFD70352736225B00DB40FF /* PhotoCollectionViewCell.swift */,
 				CFFD70362736225B00DB40FF /* PhotoCollectionViewCell.xib */,
 				CF412EC12738924900BACEFC /* ListViewCustomCells */,
@@ -388,7 +388,7 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		CF7C752527335A0800432CCB /* HomeCustomCells */ = {
+		CF7C752527335A0800432CCB /* HomeCustomCells & Post */ = {
 			isa = PBXGroup;
 			children = (
 				CF7C7521273359AB00432CCB /* IgFeedPostCell.swift */,
@@ -400,7 +400,7 @@
 				CF7C752E27335C7600432CCB /* IgFeedPostGeneralCell.swift */,
 				CF7C752F27335C7600432CCB /* IgFeedPostGeneralCell.xib */,
 			);
-			path = HomeCustomCells;
+			path = "HomeCustomCells & Post";
 			sourceTree = "<group>";
 		};
 		CFDEFAAD2731E99900935AED /* SettingsCustomCells */ = {

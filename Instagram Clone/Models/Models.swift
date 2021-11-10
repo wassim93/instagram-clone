@@ -30,8 +30,9 @@ struct UserCount {
 }
 
 
-enum UserPostType {
-    case photo,video
+enum UserPostType:String {
+    case photo = "Photo"
+    case video = "Video"
 }
 /// the post representation
  public struct UserPost {

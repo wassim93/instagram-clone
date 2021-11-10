@@ -23,11 +23,27 @@ class PostViewController: UIViewController {
         super.init(coder: coder)
     }
 
+    /*
+     Section
+      - Header Post cell
+     Section
+     - PostCell for the post content
+     Section
+     - Post Actions cell for action buttons
+     Section
+     - Post General cell  for comments
+     */
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+        tableview.register(UINib(nibName: "IgFeedPostCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostCell")
+        tableview.register(UINib(nibName: "IgFeedPostHeaderCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostHeaderCell")
+        tableview.register(UINib(nibName: "IgFeedPostActionsCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostActionsCell")
+        tableview.register(UINib(nibName: "IgFeedPostGeneralCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostGeneralCell")
+
     }
     
 

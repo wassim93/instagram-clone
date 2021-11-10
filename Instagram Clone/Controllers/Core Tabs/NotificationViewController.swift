@@ -129,5 +129,18 @@ extension NotificationViewController:UITableViewDelegate,UITableViewDataSource,N
 
     func didTapRelatedPostBtn(model: UserNotification) {
         print("tap post")
+
+        switch model.type {
+            case .like(let post):
+                let postVc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "PostViewController") as! PostViewController
+                postVc.title = post.postType.rawValue
+                postVc.navigationItem.largeTitleDisplayMode = .never
+                postVc.model = post
+                //postVc.model = nil
+                navigationController?.pushViewController(postVc, animated: true)
+            case.follow(_):
+                fatalError("Dev issue should never get called")
+        }
+
     }
 }

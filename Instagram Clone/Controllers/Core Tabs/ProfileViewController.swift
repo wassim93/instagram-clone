@@ -122,7 +122,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func didTapFollowersView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
-        print("followers click")
+        //print("followers click")
         let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController") as! ListViewController
         let mockData = [
             UserRelationship(username: "wassimmou", name: "wassimBh", type: .following),
@@ -136,7 +136,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func didTapFollowingView(header profileHeader: ProfileInfoHeaderCollectionReusableView) {
-        print("following click")
+        //print("following click")
         let vc = AppHelper.initVcFromStoryboard(storyboardName: "General", vcIdentifier: "ListViewController") as! ListViewController
         let mockData = [
             UserRelationship(username: "testing", name: "User@", type: .following),
