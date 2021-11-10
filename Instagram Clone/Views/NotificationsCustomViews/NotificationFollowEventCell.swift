@@ -32,6 +32,8 @@ class NotificationFollowEventCell: UITableViewCell {
         img.layer.cornerRadius = img.bounds.height/2
     }
 
+
+
     func configure(with model:UserNotification){
         self.model = model
         usernameLbl.text =  "\(model.user.username) "+model.text
@@ -39,22 +41,24 @@ class NotificationFollowEventCell: UITableViewCell {
             case .like(_):
                 break
             case .follow(let state):
-                switch state {
-                    case .following:
-                        followBtn.setTitle(AppHelper.getLocalizeString(str: "unfollow_title"), for: .normal)
-                        followBtn.backgroundColor = .systemGray
-                    case .not_following:
-                        followBtn.setTitle(AppHelper.getLocalizeString(str: "follow_title"), for: .normal)
-                        followBtn.backgroundColor = .systemBlue
-                }
+                configureButtonState(state)
                 break
         }
         guard !model.user.profilePic.absoluteString.contains("google.com") else{
             return
         }
         img.kf.setImage(with: model.user.profilePic)
+    }
 
-
+    fileprivate func configureButtonState(_ state: FollowState) {
+        switch state {
+            case .following:
+                followBtn.setTitle(AppHelper.getLocalizeString(str: "unfollow_title"), for: .normal)
+                followBtn.backgroundColor = .systemGray
+            case .not_following:
+                followBtn.setTitle(AppHelper.getLocalizeString(str: "follow_title"), for: .normal)
+                followBtn.backgroundColor = .systemBlue
+        }
     }
     
     @IBAction func followUnfollowAction(_ sender: Any) {
