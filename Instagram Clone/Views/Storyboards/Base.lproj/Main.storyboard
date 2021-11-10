@@ -249,10 +249,37 @@
                     <view key="view" contentMode="scaleToFill" id="2pX-DU-M0G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hiF-f6-ysT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWE-45-4hL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="pWE-45-4hL" firstAttribute="leading" secondItem="hiF-f6-ysT" secondAttribute="leading" id="dfo-Nq-3ci"/>
+                                    <constraint firstItem="pWE-45-4hL" firstAttribute="top" secondItem="hiF-f6-ysT" secondAttribute="top" id="lHF-ar-gjD"/>
+                                    <constraint firstAttribute="bottom" secondItem="pWE-45-4hL" secondAttribute="bottom" id="qcp-UY-WUJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="pWE-45-4hL" secondAttribute="trailing" id="rt3-j7-lhb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rRO-qa-7G8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hiF-f6-ysT" firstAttribute="leading" secondItem="rRO-qa-7G8" secondAttribute="leading" id="8Yy-kz-dgy"/>
+                            <constraint firstItem="rRO-qa-7G8" firstAttribute="bottom" secondItem="hiF-f6-ysT" secondAttribute="bottom" id="96g-Ph-rsL"/>
+                            <constraint firstItem="rRO-qa-7G8" firstAttribute="trailing" secondItem="hiF-f6-ysT" secondAttribute="trailing" id="lfA-0j-lV6"/>
+                            <constraint firstItem="hiF-f6-ysT" firstAttribute="top" secondItem="rRO-qa-7G8" secondAttribute="top" id="sJ5-az-Fci"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uvd-OJ-nKe"/>
+                    <connections>
+                        <outlet property="tableView" destination="pWE-45-4hL" id="ZYr-rE-1cW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i37-HW-aTi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
