@@ -9,22 +9,19 @@ import UIKit
 
 class NotificationViewController: UIViewController {
 
+    private lazy var noNotificationView = NoNotificationView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = AppHelper.getLocalizeString(str: "notification_ui_title")
+        navigationItem.title = AppHelper.getLocalizeString(str: "notification_ui_title")
+        view.addSubview(noNotificationView)
 
-        // Do any additional setup after loading the view.
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        noNotificationView.frame = CGRect(x: 0, y: 0, width: view.frame.width/2, height: view.frame.width/4)
+        noNotificationView.center = view.center
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

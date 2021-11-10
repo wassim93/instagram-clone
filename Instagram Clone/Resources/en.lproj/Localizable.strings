@@ -52,6 +52,8 @@
 // Mark: - NotificationScreen
 
 "notification_ui_title" = "Notifications";
+"no_notification_msg" = "No notification yet";
+
 
 
 // Mark: - EditProfileScreen
