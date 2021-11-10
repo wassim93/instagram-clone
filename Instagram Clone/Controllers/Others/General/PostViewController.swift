@@ -7,11 +7,35 @@
 
 import UIKit
 
+/*
+ Section
+  - Header Post cell
+ Section
+ - PostCell for the post content
+ Section
+ - Post Actions cell for action buttons
+ Section
+ - Post General cell  for comments
+ */
+
+/// states of the rendered cells
+enum PostRenderType {
+    case header(provider: User)
+    case primaryContent(provider: UserPost) // post
+    case actions(provider:String) // like , comment , share
+    case comments(comments:[PostComment])
+}
+/// model of rendered posts
+struct PostRenderViewModel {
+    let renderType:PostRenderType
+}
+
 class PostViewController: UIViewController {
 
     //FIXME: missing custom cell for this tableview
 
     @IBOutlet weak var tableview: UITableView!
+    private var renderModels = [PostRenderViewModel]()
     var model:UserPost?
     init(model:UserPost?) {
         self.model =  model
@@ -22,17 +46,6 @@ class PostViewController: UIViewController {
         self.model = nil
         super.init(coder: coder)
     }
-
-    /*
-     Section
-      - Header Post cell
-     Section
-     - PostCell for the post content
-     Section
-     - Post Actions cell for action buttons
-     Section
-     - Post General cell  for comments
-     */
 
 
     override func viewDidLoad() {
@@ -45,24 +58,54 @@ class PostViewController: UIViewController {
         tableview.register(UINib(nibName: "IgFeedPostGeneralCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostGeneralCell")
 
     }
-    
-
 
 }
 
 
 extension PostViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch renderModels[section].renderType {
+            case .header(_):
+                return 1
+            case .primaryContent(_):
+                return 1
+            case .actions(_):
+                return 1
+            case .comments(let comments):
+                return comments.count > 4 ? 4 : comments.count
+
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return renderModels.count
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableview.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        let model = renderModels[indexPath.section]
+        switch model.renderType {
+            case .header(_):
+                let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostHeaderCell", for: indexPath) as! IgFeedPostHeaderCell
+                return cell
+            case .primaryContent(_):
+                let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostCell", for: indexPath) as! IgFeedPostCell
+                return cell
+            case .actions(_):
+                let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostActionsCell", for: indexPath) as! IgFeedPostActionsCell
+                return cell
+            case .comments(_):
+                let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostGeneralCell", for: indexPath) as! IgFeedPostGeneralCell
+                return cell
 
-        return UITableViewCell()
+        }
+
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

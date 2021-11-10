@@ -45,6 +45,7 @@ enum UserPostType:String {
     let comments:[PostComment]
     let createdDate:Date
     let taggedUsers:[User]
+    let owner:User
 }
 
 struct PostLikes {

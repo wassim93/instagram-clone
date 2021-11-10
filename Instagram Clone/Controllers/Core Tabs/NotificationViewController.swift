@@ -53,6 +53,15 @@ class NotificationViewController: UIViewController {
 
     private func fetchNotifications(){
         for x in 0...40 {
+            let user = User(bio: "",
+                            username: "joe",
+                            name: (first: "", last: ""),
+                            profilePic: URL(string: "https://www.google.com")!,
+                            birthDate: Date(),
+                            gender: .male,
+                            counts: UserCount(followers: 3, following: 50, posts: 2),
+                            joinDate: Date())
+
             let post = UserPost(identifier: "",
                                 postType: .photo,
                                 thumbnailImage: URL(string: "https://www.google.com")!,
@@ -61,18 +70,11 @@ class NotificationViewController: UIViewController {
                                 likeCount: [],
                                 comments: [],
                                 createdDate: Date(),
-                                taggedUsers: [])
+                                taggedUsers: [], owner: user)
 
             let model = UserNotification(type: x % 2 == 0 ? .follow(state:.following) : .like(post: post),
                                          text: x % 2 == 0 ? "started following you": "Liked your post",
-                                         user: User(bio: "",
-                                                    username: "joe",
-                                                    name: (first: "", last: ""),
-                                                    profilePic: URL(string: "https://www.google.com")!,
-                                                    birthDate: Date(),
-                                                    gender: .male,
-                                                    counts: UserCount(followers: 3, following: 50, posts: 2),
-                                                    joinDate: Date()))
+                                         user: user)
 
 
             models.append(model)
