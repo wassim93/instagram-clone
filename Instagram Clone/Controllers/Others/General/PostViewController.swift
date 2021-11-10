@@ -56,6 +56,37 @@ class PostViewController: UIViewController {
         tableview.register(UINib(nibName: "IgFeedPostHeaderCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostHeaderCell")
         tableview.register(UINib(nibName: "IgFeedPostActionsCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostActionsCell")
         tableview.register(UINib(nibName: "IgFeedPostGeneralCell", bundle: nil), forCellReuseIdentifier: "IgFeedPostGeneralCell")
+        configureModels()
+
+    }
+
+
+    private func configureModels(){
+        // header
+        guard let userPostModel = self.model else{
+            return
+        }
+        renderModels.append(PostRenderViewModel(renderType: .header(provider: userPostModel.owner)))
+
+        // post
+
+        renderModels.append(PostRenderViewModel(renderType: .primaryContent(provider: userPostModel)))
+
+        // actions
+
+        renderModels.append(PostRenderViewModel(renderType: .actions(provider: "")))
+
+
+        // 4 comments
+        var comments = [PostComment]()
+        for i in 0..<4 {
+            comments.append(PostComment(identifier: "123_\(i)",
+                                        username: "@wassim",
+                                        text: "great one",
+                                        createdDate: Date(),
+                                        likes: []))
+        }
+        renderModels.append(PostRenderViewModel(renderType: .comments(comments: comments)))
 
     }
 
@@ -101,14 +132,12 @@ extension PostViewController:UITableViewDelegate,UITableViewDataSource{
 
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
-    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let model = renderModels[indexPath.section]
         switch model.renderType {
             case .header(_):
-                return 70
+                return 60
             case .primaryContent(_):
                 return tableview.frame.width
             case .actions(_):
