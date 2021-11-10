@@ -13,7 +13,7 @@ struct UserNotification {
     let user:User
 }
 enum UserNotificationType {
-    case follow
+    case follow(state:FollowState)
     case like(post:UserPost)
 }
 
@@ -63,7 +63,7 @@ class NotificationViewController: UIViewController {
                                 createdDate: Date(),
                                 taggedUsers: [])
 
-            let model = UserNotification(type: x % 2 == 0 ? .follow : .like(post: post),
+            let model = UserNotification(type: x % 2 == 0 ? .follow(state:.following) : .like(post: post),
                                          text: x % 2 == 0 ? "started following you": "Liked your post",
                                          user: User(bio: "",
                                                     username: "joe",
@@ -90,7 +90,7 @@ class NotificationViewController: UIViewController {
 
 }
 
-extension NotificationViewController:UITableViewDelegate,UITableViewDataSource{
+extension NotificationViewController:UITableViewDelegate,UITableViewDataSource,NotificationsProtocol{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
@@ -108,14 +108,26 @@ extension NotificationViewController:UITableViewDelegate,UITableViewDataSource{
             case .like(_):
                 // like cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationLikeEventCell", for: indexPath) as! NotificationLikeEventCell
+                cell.delegate = self
                 cell.configure(with: model)
                 return cell
 
             case .follow:
                 // follow cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationFollowEventCell", for: indexPath) as! NotificationFollowEventCell
+                cell.delegate = self
                 cell.configure(with: model)
                 return cell
         }
+    }
+
+
+    func didTapFollowUnfollowBtn(model: UserNotification) {
+        print("tap follow")
+        // perform database update
+    }
+
+    func didTapRelatedPostBtn(model: UserNotification) {
+        print("tap post")
     }
 }

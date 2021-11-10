@@ -35,20 +35,32 @@ class NotificationFollowEventCell: UITableViewCell {
     func configure(with model:UserNotification){
         self.model = model
         usernameLbl.text =  "\(model.user.username) "+model.text
+        switch model.type {
+            case .like(_):
+                break
+            case .follow(let state):
+                switch state {
+                    case .following:
+                        followBtn.setTitle(AppHelper.getLocalizeString(str: "unfollow_title"), for: .normal)
+                        followBtn.backgroundColor = .systemGray
+                    case .not_following:
+                        followBtn.setTitle(AppHelper.getLocalizeString(str: "follow_title"), for: .normal)
+                        followBtn.backgroundColor = .systemBlue
+                }
+                break
+        }
         guard !model.user.profilePic.absoluteString.contains("google.com") else{
             return
         }
         img.kf.setImage(with: model.user.profilePic)
-        switch model.type {
-            case .like(_):
-                break
-            case .follow:
-                break
-        }
+
 
     }
     
     @IBAction func followUnfollowAction(_ sender: Any) {
-        delegate?.didTapFollowUnfollowBtn(model: "")
+        guard let model = model else {
+            return
+        }
+        delegate?.didTapFollowUnfollowBtn(model: model)
     }
 }

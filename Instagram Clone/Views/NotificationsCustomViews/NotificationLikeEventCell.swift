@@ -55,7 +55,10 @@ class NotificationLikeEventCell: UITableViewCell {
     }
     
     @objc func postClickAction(sender:UITapGestureRecognizer) {
-        delegate?.didTapRelatedPostBtn(model: "")
+        guard let model = model else{
+            return
+        }
+        delegate?.didTapRelatedPostBtn(model: model)
     }
     
 }

@@ -40,8 +40,8 @@ protocol UserFollowProtocol:NSObjectProtocol {
 
 //MARK: - NotificationCells
 protocol NotificationsProtocol:NSObjectProtocol {
-    func didTapFollowUnfollowBtn(model: String) -> Void
-    func didTapRelatedPostBtn(model: String) -> Void
+    func didTapFollowUnfollowBtn(model: UserNotification) -> Void
+    func didTapRelatedPostBtn(model: UserNotification) -> Void
 
 
 }
