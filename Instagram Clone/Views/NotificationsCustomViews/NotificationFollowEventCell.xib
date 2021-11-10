@@ -22,16 +22,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goku_ultra_instinct" translatesAutoresizingMaskIntoConstraints="NO" id="6wm-cO-GSI">
-                                <rect key="frame" x="15" y="5" width="70" height="67"/>
+                                <rect key="frame" x="15" y="5" width="45" height="67"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="XSm-Oq-ED3"/>
+                                    <constraint firstAttribute="width" constant="45" id="XSm-Oq-ED3"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Ru-vk-qq2">
-                                <rect key="frame" x="95" y="24" width="125" height="29"/>
+                                <rect key="frame" x="70" y="31.5" width="150" height="14.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username started following you" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFJ-80-blS">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username following you" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFJ-80-blS">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

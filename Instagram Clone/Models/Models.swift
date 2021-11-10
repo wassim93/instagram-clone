@@ -15,6 +15,7 @@ struct User {
     let bio:String
     let username:String
     let name:(first:String,last:String)
+    let profilePic:URL
     let birthDate:Date
     let gender:Gender
     let counts:UserCount
