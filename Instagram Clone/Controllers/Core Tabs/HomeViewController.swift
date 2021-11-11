@@ -38,12 +38,42 @@ class HomeViewController: UIViewController {
     }
 
     func createMockModels(){
-//        for i in 0...<5{
-//            let viewModel = HomeFeedRenderViewModel(header: <#T##PostRenderViewModel#>,
-//                                                    primaryContent: <#T##PostRenderViewModel#>,
-//                                                    actions: <#T##PostRenderViewModel#>,
-//                                                    comments: <#T##PostRenderViewModel#>)
-//        }
+        let user = User(bio: "",
+                        username: "joe",
+                        name: (first: "", last: ""),
+                        profilePic: URL(string: "https://www.google.com")!,
+                        birthDate: Date(),
+                        gender: .male,
+                        counts: UserCount(followers: 3, following: 50, posts: 2),
+                        joinDate: Date())
+
+        let post = UserPost(identifier: "",
+                            postType: .photo,
+                            thumbnailImage: URL(string: "https://www.google.com")!,
+                            postURL: URL(string: "https://www.google.com")!,
+                            caption: nil,
+                            likeCount: [],
+                            comments: [],
+                            createdDate: Date(),
+                            taggedUsers: [], owner: user)
+
+        var comments = [PostComment]()
+        for i in 0..<2 {
+            comments.append(PostComment(identifier: "\(i)",
+                                        username: "@wass",
+                                        text: "lovely post dude",
+                                        createdDate: Date(),
+                                        likes: []))
+        }
+        for i in 0..<5{
+            let viewModel = HomeFeedRenderViewModel(header: PostRenderViewModel(renderType: .header(provider: user)),
+                                                    primaryContent: PostRenderViewModel(renderType: .primaryContent(provider: post)),
+                                                    actions: PostRenderViewModel(renderType: .actions(provider: "")),
+                                                    comments: PostRenderViewModel(renderType: .comments(comments: comments)))
+            feedRenderModels.append(viewModel)
+        }
+
+        print(feedRenderModels.count)
     }
 
 
@@ -66,7 +96,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if x == 0 {
             model = feedRenderModels[0]
         }else{
-            let position = x % 4 == 0 ? x/4 : (x-(x % 4) / 4)
+            let position = x % 4 == 0 ? x/4 : ((x-(x % 4)) / 4)
             model = feedRenderModels[position]
         }
         let subSection = x % 4
@@ -102,7 +132,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if x == 0 {
             model = feedRenderModels[0]
         }else{
-            let position = x % 4 == 0 ? x/4 : (x-(x % 4) / 4)
+            let position = x % 4 == 0 ? x/4 : ((x-(x % 4)) / 4)
             model = feedRenderModels[position]
         }
 
