@@ -198,6 +198,15 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         return 0
     }
 
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let subSection = section % 4
+        return subSection == 3 ? 50 : 0
+
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableview.deselectRow(at: indexPath, animated: true)
     }
