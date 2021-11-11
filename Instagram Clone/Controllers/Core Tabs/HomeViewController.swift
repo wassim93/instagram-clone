@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
 
     func createMockModels(){
         let user = User(bio: "",
-                        username: "joe",
+                        username: "John doe",
                         name: (first: "", last: ""),
                         profilePic: URL(string: "https://www.google.com")!,
                         birthDate: Date(),
@@ -89,7 +89,8 @@ class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
+extension HomeViewController : UITableViewDelegate,UITableViewDataSource,FeedPostProtocol{
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let x = section
         let model:HomeFeedRenderViewModel
@@ -142,6 +143,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             switch model.header.renderType {
                 case .header(let user):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostHeaderCell", for: indexPath) as! IgFeedPostHeaderCell
+                    cell.delegate = self
+                    cell.configure(with: user)
                     return cell
                 case .comments, .actions , .primaryContent: return UITableViewCell()
 
@@ -151,6 +154,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             switch model.primaryContent.renderType {
                 case .primaryContent(let post):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostCell", for: indexPath) as! IgFeedPostCell
+                    cell.configure(with: post)
                     return cell
                 case .comments, .actions , .header: return UITableViewCell()
             }
@@ -206,6 +210,34 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableview.deselectRow(at: indexPath, animated: true)
     }
+
+
+    func didTapMoreBtn(model: String) {
+        print("more tapped")
+        showSheet()
+    }
+
+    func showSheet() {
+        let actionSheet =  UIAlertController(title: AppHelper.getLocalizeString(str: "more_action_sheet_title"), message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: AppHelper.getLocalizeString(str: "more_action_sheet_action1"), style: .destructive, handler: { [weak self] _ in
+            self?.reportPost()
+
+        }))
+        actionSheet.addAction(UIAlertAction(title: AppHelper.getLocalizeString(str: "more_action_sheet_action2"), style: .cancel, handler: {_ in
+
+        }))
+
+        /// this two line for preventing crash on ipad when presenting the sheet
+        actionSheet.popoverPresentationController?.sourceView = view
+        actionSheet.popoverPresentationController?.sourceRect = view.bounds
+
+        present(actionSheet, animated: true)
+    }
+
+    func reportPost(){
+        print("report post")
+    }
+
 
 
 }

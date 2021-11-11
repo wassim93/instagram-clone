@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class IgFeedPostHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var moreBtn: UIButton!
+    @IBOutlet weak var usernameLbl: UILabel!
+    weak var delegate:FeedPostProtocol?
     override func awakeFromNib() {
         super.awakeFromNib()
+        img.layer.cornerRadius = img.frame.height/2
         // Initialization code
     }
 
@@ -19,5 +25,13 @@ class IgFeedPostHeaderCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func configure(with user:User){
+        usernameLbl.text = user.username
+        img.image = UIImage(systemName: "person.circle")
+        //img.kf.setImage(with: user.profilePic)
+    }
+    @IBAction func moreAction(_ sender: Any) {
+        delegate?.didTapMoreBtn(model: "")
+    }
 }

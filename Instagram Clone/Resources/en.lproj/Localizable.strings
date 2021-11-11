@@ -99,6 +99,12 @@
 "follow_title" = "Follow";
 "unfollow_title" = "Unfollow";
 
+// Mark: - HomeFeed controller
+"more_action_sheet_title" = "Options";
+"more_action_sheet_action1" = "Report Post";
+"more_action_sheet_action2" = "Cancel";
+
+
 
 
 

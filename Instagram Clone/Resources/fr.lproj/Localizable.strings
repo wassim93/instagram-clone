@@ -94,6 +94,12 @@
 "unfollow_title" = "Se desabonner";
 
 
+// Mark: - HomeFeed controller
+"more_action_sheet_title" = "Options";
+"more_action_sheet_action1" = "Signaler Publication";
+"more_action_sheet_action2" = "Annuler";
+
+
 
 
 
