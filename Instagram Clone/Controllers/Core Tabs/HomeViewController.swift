@@ -139,8 +139,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         let subSection = x % 4
         if subSection == 0 {
             //header
-            let headerModel = model.header
-            switch headerModel.renderType {
+            switch model.header.renderType {
                 case .header(let user):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostHeaderCell", for: indexPath) as! IgFeedPostHeaderCell
                     return cell
@@ -149,8 +148,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             }
         }else if subSection == 1 {
             //post
-            let postModel = model.primaryContent
-            switch postModel.renderType {
+            switch model.primaryContent.renderType {
                 case .primaryContent(let post):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostCell", for: indexPath) as! IgFeedPostCell
                     return cell
@@ -158,8 +156,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             }
         }else if subSection == 2 {
             //actions
-            let actionModel = model.actions
-            switch actionModel.renderType {
+            switch model.actions.renderType {
                 case .actions(let provider):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostActionsCell", for: indexPath) as! IgFeedPostActionsCell
                     return cell
@@ -167,8 +164,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             }
         }else if subSection == 3 {
             //comments
-            let commentModel =  model.comments
-            switch commentModel.renderType {
+            switch model.comments.renderType {
                 case .comments(comments: let comments):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostGeneralCell", for: indexPath) as! IgFeedPostGeneralCell
                     return cell
