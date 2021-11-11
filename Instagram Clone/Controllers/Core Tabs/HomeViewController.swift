@@ -192,7 +192,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource,FeedPos
             return tableview.frame.width
         }else if subSection == 2 {
             //actions
-            return 60
+            return 55
         }else if subSection == 3 {
             // comments
             return 50
