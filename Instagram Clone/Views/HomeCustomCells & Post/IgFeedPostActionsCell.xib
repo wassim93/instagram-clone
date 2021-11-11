@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +19,52 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtX-8K-G1i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTl-ot-mh0">
+                                <rect key="frame" x="5" y="5" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="yOx-gg-wNF"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="likeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0Rs-qi-YWR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3U-qY-HKf">
+                                <rect key="frame" x="40" y="5" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="KqU-xy-bGW"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="message" catalog="system"/>
+                                <connections>
+                                    <action selector="commentAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pLm-Lt-X7D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-6F-IUJ">
+                                <rect key="frame" x="75" y="5" width="35" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="eSQ-j5-7Cs"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="paperplane" catalog="system"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hVl-eP-l1E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="BTl-ot-mh0" firstAttribute="top" secondItem="JtX-8K-G1i" secondAttribute="top" constant="5" id="Fvl-ic-BEA"/>
+                            <constraint firstItem="sfS-6F-IUJ" firstAttribute="top" secondItem="JtX-8K-G1i" secondAttribute="top" constant="5" id="Ltf-7c-baC"/>
+                            <constraint firstItem="M3U-qY-HKf" firstAttribute="centerY" secondItem="JtX-8K-G1i" secondAttribute="centerY" id="abz-jV-3eu"/>
+                            <constraint firstItem="sfS-6F-IUJ" firstAttribute="centerY" secondItem="JtX-8K-G1i" secondAttribute="centerY" id="cwu-HI-jd5"/>
+                            <constraint firstItem="BTl-ot-mh0" firstAttribute="leading" secondItem="JtX-8K-G1i" secondAttribute="leading" constant="5" id="dky-Su-FFm"/>
+                            <constraint firstItem="sfS-6F-IUJ" firstAttribute="leading" secondItem="M3U-qY-HKf" secondAttribute="trailing" id="eYB-2t-HRe"/>
+                            <constraint firstItem="M3U-qY-HKf" firstAttribute="top" secondItem="JtX-8K-G1i" secondAttribute="top" constant="5" id="qDC-EH-S4Z"/>
+                            <constraint firstItem="M3U-qY-HKf" firstAttribute="leading" secondItem="BTl-ot-mh0" secondAttribute="trailing" id="sbO-eh-w7k"/>
+                            <constraint firstItem="BTl-ot-mh0" firstAttribute="centerY" secondItem="JtX-8K-G1i" secondAttribute="centerY" id="vgc-cC-v5P"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <constraints>
@@ -31,12 +75,17 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="commentBtn" destination="M3U-qY-HKf" id="Q78-Ns-Qcp"/>
+                <outlet property="likeBtn" destination="BTl-ot-mh0" id="JCg-Vf-wkO"/>
+                <outlet property="sendBtn" destination="sfS-6F-IUJ" id="1wX-p6-4xl"/>
+            </connections>
             <point key="canvasLocation" x="81" y="35"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
     </resources>
 </document>

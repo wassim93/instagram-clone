@@ -163,6 +163,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource,FeedPos
             switch model.actions.renderType {
                 case .actions(let provider):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "IgFeedPostActionsCell", for: indexPath) as! IgFeedPostActionsCell
+                    cell.delegate = self
+                    //cell.configure(with: provider)
                     return cell
                 case .comments, .primaryContent , .header: return UITableViewCell()
             }
@@ -211,12 +213,6 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource,FeedPos
         tableview.deselectRow(at: indexPath, animated: true)
     }
 
-
-    func didTapMoreBtn(model: String) {
-        print("more tapped")
-        showSheet()
-    }
-
     func showSheet() {
         let actionSheet =  UIAlertController(title: AppHelper.getLocalizeString(str: "more_action_sheet_title"), message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: AppHelper.getLocalizeString(str: "more_action_sheet_action1"), style: .destructive, handler: { [weak self] _ in
@@ -234,8 +230,28 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource,FeedPos
         present(actionSheet, animated: true)
     }
 
+
+    func didTapMoreBtn() {
+        print("more tapped")
+        showSheet()
+    }
+
     func reportPost(){
         print("report post")
+    }
+
+    func didTapLikeBtn() {
+        print("like tapped")
+    }
+
+    func didTapCommentBtn() {
+        print("comment tapped")
+
+    }
+
+    func didTapSendBtn() {
+        print("send tapped")
+
     }
 
 

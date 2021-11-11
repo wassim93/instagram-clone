@@ -31,7 +31,8 @@ class IgFeedPostHeaderCell: UITableViewCell {
         img.image = UIImage(systemName: "person.circle")
         //img.kf.setImage(with: user.profilePic)
     }
+    
     @IBAction func moreAction(_ sender: Any) {
-        delegate?.didTapMoreBtn(model: "")
+        delegate?.didTapMoreBtn()
     }
 }

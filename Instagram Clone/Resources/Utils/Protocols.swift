@@ -48,7 +48,13 @@ protocol NotificationsProtocol:NSObjectProtocol {
 
 //MARK: - FeedPostcells
 protocol FeedPostProtocol:NSObjectProtocol {
-    func didTapMoreBtn(model: String) -> Void
+    /// header section actions
+    func didTapMoreBtn() -> Void
+    /// action section actions
+    func didTapLikeBtn() -> Void
+    func didTapCommentBtn() -> Void
+    func didTapSendBtn() -> Void
+
 
 
 }
